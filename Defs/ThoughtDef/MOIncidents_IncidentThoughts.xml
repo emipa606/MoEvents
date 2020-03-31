@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThoughtDef>
+		<defName>MO_Nauseated</defName>
+		<durationDays>1.5</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Nauseated</label>
+				<description>I'm so sick and tired out of sudden... I need rest.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	
+	<ThoughtDef>
+		<defName>MO_HadStroke</defName>
+		<durationDays>2</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Experienced stroke</label>
+				<description>I suddenly felt down and lost control. My body hurts, what happened?</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+<!--
+	<ThoughtDef>
+		<defName>MO_Healed</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Recovered</label>
+				<description>One of my injuries got healed randomly, I feel good!</description>
+				<baseMoodEffect>10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+-->
+<!--
+	<ThoughtDef>
+		<defName>MO_GoodRest</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Rested</label>
+				<description>I feel so rested and fit, it's great!</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+-->
+
+	<ThoughtDef>
+		<defName>MO_Amnesia</defName>
+		<durationDays>0.3</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Blackout</label>
+				<description>I suddenly forgot everything, that's not good.</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+</Defs>
