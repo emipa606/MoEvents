@@ -1,29 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-	<MO_Amnesia>Amnesia</MO_Amnesia>
-	<MO_AmnesiaDesc>{PAWN_nameDef} suddenly forgot what {PAWN_gender ? he : she} was doing. {PAWN_gender ? He : She} can't remember what to do.</MO_AmnesiaDesc>
-	<MO_CalmWeather>Calm weather</MO_CalmWeather>
-	<MO_CalmWeatherDesc>The weather just got remarkably calm. Wind turbines will be useless, but shooting will be easier.</MO_CalmWeatherDesc>
-	<MO_CargoRain>Cargo rain</MO_CargoRain>
-	<MO_CargoRainDesc>A chunk of your crashed ship fell into the atmosphere, watch out for falling cargo and rescue pods.\n\nIt looks like this chunk came from one of the richer parts of the ship.</MO_CargoRainDesc>
-	<MO_Insects>Insects</MO_Insects>
-	<MO_InsectsDesc>A group of hungry insects have entered your area. They'll do anything to get your food!</MO_InsectsDesc>
-	<MO_Migration>Migration</MO_Migration>
-	<MO_MigrationDesc>A large group of animals are migrating through your area. You can hunt, tame or leave them.</MO_MigrationDesc>
-	<MO_Nausea>Nausea</MO_Nausea>
-	<MO_NauseaDesc>{PAWN_nameDef} is feeling nauseous. {PAWN_gender ? He : She} vomited all over and needs rest.</MO_NauseaDesc>
-	<MO_Recovery>Recovery</MO_Recovery>
-	<MO_RecoveryDesc>{PAWN_nameDef} felt a surge of power. One of his injuries got healed and {PAWN_gender ? he : she} is feeling exceptionally well.</MO_RecoveryDesc>
-	<MO_Stroke>Stroke</MO_Stroke>
-	<MO_StrokeDesc>{PAWN_nameDef} had a stroke. {PAWN_gender ? He : She} needs medical care and rest.</MO_StrokeDesc>
-	<MO_SurvivalPods>Survival pods</MO_SurvivalPods>
-	<MO_SurvivalPodsDesc>A cluster of survival pods landed nearby, you will find some essential surviving items in there.</MO_SurvivalPodsDesc>
-	<MO_Thanksgiving>Thanksgiving</MO_Thanksgiving>
-	<MO_ThanksgivingDesc>One of the tribes has noticed your food stores are low. They have provided you with some food, no strings attached.\n\nThey thank you for being such good friends and they hope your friendship will be further cemented by this act.</MO_ThanksgivingDesc>
-	<MO_TribalAid>Tribal aid</MO_TribalAid>
-	<MO_TribalAidDesc>One of the tribes has send you a message.\n\nWhile the language of the tribals was unfamiliar, the intention was clear: The tribal party didn't have the ability to treat the injuries of one of their friends and they pleaded that you heal their friend..\n\nYou can help the injured tribal to improve relations with the corresponding faction, or capture them for slavery or recruitment purposes.</MO_TribalAidDesc>
-	<MO_Trojan>Abomination</MO_Trojan>
-	<MO_TrojanDesc>{PAWN_nameDef} has turned into an Abomination!</MO_TrojanDesc>
-	<MO_WellRested>Well rested</MO_WellRested>
-	<MO_WellRestedDesc>{PAWN_nameDef} is feeling well rested and fit.</MO_WellRestedDesc>
+  <MO_Amnesia>Амнезия</MO_Amnesia>
+  <MO_AmnesiaDesc>{PAWN_nameDef} вдруг забыл, что {PAWN_gender? он: она} {PAWN_gender? делал: делала}. {PAWN_gender? Он: Она} не может вспомнить, что делать.</MO_AmnesiaDesc>
+  <MO_CalmWeather>Штиль</MO_CalmWeather>
+  <MO_CalmWeatherDesc>Погода просто стала удивительно спокойной. Ветровые турбины будут бесполезны, но стрелять будет легче.</MO_CalmWeatherDesc>
+  <MO_CargoRain>Грузовой дождь</MO_CargoRain>
+  <MO_CargoRainDesc>Кусок вашего разбившегося корабля упал в атмосферу, остерегайтесь падающих грузов и спасательных капсул. \ N \ nПохоже, что этот кусок отвалился от одной из более богатых частей корабля.</MO_CargoRainDesc>
+  <MO_Insects>Насекомые</MO_Insects>
+  <MO_InsectsDesc>Группа голодных насекомых проникла в вашу область. Они сделают все, чтобы получить вашу еду!</MO_InsectsDesc>
+  <MO_Migration>Миграция</MO_Migration>
+  <MO_MigrationDesc>Большая группа животных мигрирует через ваш район. Вы можете охотиться, приручить или оставить их.</MO_MigrationDesc>
+  <MO_Nausea>Тошнота</MO_Nausea>
+  <MO_NauseaDesc>{PAWN_nameDef} чувствует тошноту. {PAWN_gender ? Он : Она} рвет повсюду и нуждается в отдыхе.</MO_NauseaDesc>
+  <MO_Recovery>Восстановление</MO_Recovery>
+  <MO_RecoveryDesc>{PAWN_nameDef} {PAWN_gender? почувствовал: почувствовала} прилив сил. Одна из {PAWN_gender? его: её} травм была исцелена и {PAWN_gender? он: она} очень хорошо себя чувствует.</MO_RecoveryDesc>
+  <MO_Stroke>Инсульт</MO_Stroke>
+  <MO_StrokeDesc>{PAWN_nameDef} был инсульт. {PAWN_gender ? Он : Она} нуждается в медицинской помощи и отдыхе.</MO_StrokeDesc>
+  <MO_SurvivalPods>Cпасательныt капсулы</MO_SurvivalPods>
+  <MO_SurvivalPodsDesc>Кластер спасательных капсул приземлился неподалеку, и вы найдете там некоторые важные уцелевшие предметы.</MO_SurvivalPodsDesc>
+  <MO_Thanksgiving>Благодарение</MO_Thanksgiving>
+  <MO_ThanksgivingDesc>Одно из племен заметило, что ваши запасы продовольствия невелики. Они предоставили вам немного еды, без всяких условий.они благодарят Вас за то, что вы такие хорошие друзья, и они надеются, что ваша дружба будет еще больше укреплена этим актом.</MO_ThanksgivingDesc>
+  <MO_TribalAid>Лечение для племени</MO_TribalAid>
+  <MO_TribalAidDesc>Одно из племен прислало тебе сообщение.хотя язык племени был незнакомым, намерение было ясным: у племенной общины не было возможности лечить раны одного из своих друзей, и они умоляли, чтобы вы исцелили их друга..\n\nВы можете помочь пострадавшему племени улучшить отношения с соответствующей фракцией или захватить их в рабство или в целях вербовки.</MO_TribalAidDesc>
+  <MO_Trojan>Мерзость</MO_Trojan>
+  <MO_TrojanDesc>{PAWN_nameDef} превратился в мерзость!</MO_TrojanDesc>
+  <MO_WellRested>Хороший отдых</MO_WellRested>
+  <MO_WellRestedDesc>{PAWN_nameDef} чувствует себя хорошо отдохнувшим и подтянутым.</MO_WellRestedDesc>
+
 </LanguageData>
