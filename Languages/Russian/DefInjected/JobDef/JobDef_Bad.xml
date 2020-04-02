@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MO_Kill.reportString>Убить TargetA.</MO_Kill.reportString>
+  <MO_Segmentation.reportString>Сегментация через TargetA.</MO_Segmentation.reportString>
+  <MO_CrushDoor.reportString>Падение TargetB.</MO_CrushDoor.reportString>
+
+
+</LanguageData>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Special non-humanoid factions -->
+
+  <MO_AbominationFaction.label>Мерзость</MO_AbominationFaction.label>
+  <MO_AbominationFaction.description>Мерзости - это медленные, неуклюжие, неустанные проявления плоти. Их тела скручиваются и деформируются, чтобы быстро залечить даже серьезные раны. Их изуродованная пасть просачивается с токсичной желчью. Они будут поглощать и усваивать, труп за трупом.</MO_AbominationFaction.description>
+  <MO_AbominationFaction.fixedName>мерзость</MO_AbominationFaction.fixedName>
+  <MO_AbominationFaction.pawnsPlural>мерзости</MO_AbominationFaction.pawnsPlural>
+
+
+</LanguageData>
