@@ -26,4 +26,7 @@
 	<MO_TrojanDesc>{PAWN_nameDef} has turned into an Abomination!</MO_TrojanDesc>
 	<MO_WellRested>Well rested</MO_WellRested>
 	<MO_WellRestedDesc>{PAWN_nameDef} is feeling well rested and fit.</MO_WellRestedDesc>
+	<MO_SettingHeader>&lt;b&gt;Change events base chance (set to 0 to disable):&lt;/b&gt;</MO_SettingHeader>
+	<MO_TrojanReFire>Minimum days before refire :</MO_TrojanReFire>
+	<MO_TrojanFire>Minimum days before fire :</MO_TrojanFire>
 </LanguageData>

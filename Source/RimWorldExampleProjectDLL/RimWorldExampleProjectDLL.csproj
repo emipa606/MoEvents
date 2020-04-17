@@ -43,6 +43,10 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -70,6 +74,9 @@
     <Compile Include="Mo_Utility.cs" />
     <Compile Include="Pawn_theThing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\WorldComp.cs" />
+    <Compile Include="Settings\ME_ModSettings.cs" />
+    <Compile Include="Settings\ME_Mod.cs" />
     <Compile Include="theThing_Utility.cs" />
     <Compile Include="Ticker_RTWorker.cs" />
   </ItemGroup>
