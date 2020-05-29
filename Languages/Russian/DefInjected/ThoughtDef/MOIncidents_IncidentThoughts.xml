@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <MO_Nauseated.stages.0.label>Тошнит</MO_Nauseated.stages.0.label>
   <MO_Nauseated.stages.0.description>Я так вымоталася и устал от этой внезапности... Мне нужен отдых.</MO_Nauseated.stages.0.description>
-
   <MO_HadStroke.stages.0.label>Пережитый инсульт</MO_HadStroke.stages.0.label>
   <MO_HadStroke.stages.0.description>Я вдруг почувствовал себя подавленным и потерял контроль. Мое тело болит, что случилось?</MO_HadStroke.stages.0.description>
-
-
   <!-- <ThoughtDef>
 		<defName>MO_GoodRest</defName>
 		<durationDays>1</durationDays>
@@ -20,9 +16,6 @@
 			</li>
 		</stages>
 	</ThoughtDef> -->
-
   <MO_Amnesia.stages.0.label>Провал памяти</MO_Amnesia.stages.0.label>
   <MO_Amnesia.stages.0.description>Я вдруг все забыл, это не хорошо.</MO_Amnesia.stages.0.description>
-
-
 </LanguageData>

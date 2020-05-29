@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  
   <!-- Special non-humanoid factions -->
-
   <FactionDef>
     <defName>MO_AbominationFaction</defName>
     <label>Abomination</label>
@@ -10,17 +8,17 @@
     <pawnsPlural>abominations</pawnsPlural>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <fixedName>abomination</fixedName>
-	<raidCommonalityFromPointsCurve>
-		<points>
-			<li>(0, 0)</li>
-		</points>
-	</raidCommonalityFromPointsCurve>
-	<permanentEnemy>true</permanentEnemy>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <permanentEnemy>true</permanentEnemy>
     <humanlikeFaction>false</humanlikeFaction>
     <hidden>true</hidden>
     <autoFlee>false</autoFlee>
     <techLevel>Neolithic</techLevel>
     <canUseAvoidGrid>false</canUseAvoidGrid>
-	<factionIconPath>World/WorldObjects/Expanding/VillageSavage</factionIconPath>
+    <factionIconPath>World/WorldObjects/Expanding/VillageSavage</factionIconPath>
   </FactionDef>
 </Defs>

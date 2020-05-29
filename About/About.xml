@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Mo'Events (Continued)</name>
-  	<packageId>Mlie.MoEvents</packageId>
-	<author>ilawz</author>
-	<url>https://github.com/emipa606/MoEvents</url>
-	<supportedVersions>
-		<li>1.1</li>
-	</supportedVersions>
-	<modDependencies />
-	<loadAfter />
-	<description>Update of ilawz mod for RimWorld 1.1.
+  <packageId>Mlie.MoEvents</packageId>
+  <author>ilawz</author>
+  <url>https://github.com/emipa606/MoEvents</url>
+  <supportedVersions>
+    <li>1.1</li>
+  </supportedVersions>
+  <modDependencies />
+  <loadAfter />
+  <description>Update of ilawz mod for RimWorld 1.1.
 https://steamcommunity.com/sharedfiles/filedetails/?id=835151481
 
 [img]https://raw.githubusercontent.com/emipa606/RimWorld-Wrapper/master/Notice.png[/img]

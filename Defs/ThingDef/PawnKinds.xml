@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<PawnKindDef>
-		<defName>MO_AbominationPawnKind</defName>
-		<label>abomination</label>
-		<race>MO_AbominationRace</race>
-		<combatPower>230</combatPower>
-		<defaultFactionType>MO_AbominationFaction</defaultFactionType>
-		<aiAvoidCover>true</aiAvoidCover>
-		<lifeStages>
-		  <li>
-			<bodyGraphicData>
-			  <texPath>Pawn/Abomination</texPath>
-			  <graphicClass>Graphic_Multi</graphicClass>
-			  <shaderType>Transparent</shaderType>
-			  <drawSize>1.7</drawSize>
-			  <shadowData>
-				<volume>(0, 0, 0)</volume>
-			  </shadowData>
-			</bodyGraphicData>
-		  </li>
-		</lifeStages>
-	</PawnKindDef>
+  <PawnKindDef>
+    <defName>MO_AbominationPawnKind</defName>
+    <label>abomination</label>
+    <race>MO_AbominationRace</race>
+    <combatPower>230</combatPower>
+    <defaultFactionType>MO_AbominationFaction</defaultFactionType>
+    <aiAvoidCover>true</aiAvoidCover>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Pawn/Abomination</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>Transparent</shaderType>
+          <drawSize>1.7</drawSize>
+          <shadowData>
+            <volume>(0, 0, 0)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
 </Defs>

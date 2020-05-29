@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Special non-humanoid factions -->
+
+  <MO_AbominationFaction.label>Abomination</MO_AbominationFaction.label>
+  <MO_AbominationFaction.description>Abominations are slow, hulking, relentless manifestations of flesh. Their bodies twist and contort to heal even major wounds quickly. Their mangled maw seeps with toxic bile. They will consume and assimilate, corpse by corpse.</MO_AbominationFaction.description>
+  <MO_AbominationFaction.fixedName>abomination</MO_AbominationFaction.fixedName>
+  <MO_AbominationFaction.pawnsPlural>abominations</MO_AbominationFaction.pawnsPlural>
+
+
+</LanguageData>
