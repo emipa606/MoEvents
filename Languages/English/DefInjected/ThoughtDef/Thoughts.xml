@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <MO_Nauseated.stages.0.label>Nauseated</MO_Nauseated.stages.0.label>
   <MO_Nauseated.stages.0.description>I'm so sick and tired out of sudden... I need rest.</MO_Nauseated.stages.0.description>
-
   <MO_HadStroke.stages.0.label>Experienced stroke</MO_HadStroke.stages.0.label>
   <MO_HadStroke.stages.0.description>I suddenly felt down and lost control. My body hurts, what happened?</MO_HadStroke.stages.0.description>
-
-
   <!-- <ThoughtDef>
 		<defName>MO_GoodRest</defName>
 		<durationDays>1</durationDays>
@@ -20,9 +16,6 @@
 			</li>
 		</stages>
 	</ThoughtDef> -->
-
   <MO_Amnesia.stages.0.label>Blackout</MO_Amnesia.stages.0.label>
   <MO_Amnesia.stages.0.description>I suddenly forgot everything, that's not good.</MO_Amnesia.stages.0.description>
-
-
 </LanguageData>

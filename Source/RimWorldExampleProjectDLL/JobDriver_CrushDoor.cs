@@ -1,63 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
 namespace MoreIncidents
 {
-	public class JobDriver_CrushDoor : JobDriver
-	{
+    public class JobDriver_CrushDoor : JobDriver
+    {
+        private int numMeleeAttacksMade;
+
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<int>(ref this.numMeleeAttacksMade, "numMeleeAttacksMade", 0, false);
+            Scribe_Values.Look(ref numMeleeAttacksMade, "numMeleeAttacksMade");
         }
+
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return this.pawn.Reserve(this.job.targetA, this.job, 1, -1, null, errorOnFailed);
+            return pawn.Reserve(job.targetA, job, 1, -1, null, errorOnFailed);
         }
+
         protected override IEnumerable<Toil> MakeNewToils()
-		{
-			Toil toil = Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
-			ToilFailConditions.FailOnDestroyedOrNull<Toil>(toil, TargetIndex.B);
-			yield return toil;
-			yield return this.BashIt();
-			yield break;
-		}
+        {
+            var toil = Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
+            toil.FailOnDestroyedOrNull(TargetIndex.B);
+            yield return toil;
+            yield return BashIt();
+        }
 
-		public Toil BashIt()
-		{
-			Toil bashIt = new Toil();
-			bashIt.tickAction = delegate()
-			{
-				Pawn actor = bashIt.actor;
-				Job curJob = actor.jobs.curJob;
-				Thing thing = curJob.GetTarget(TargetIndex.B).Thing;
-				bool flag = actor.meleeVerbs.TryMeleeAttack(thing, null, false);
-				bool flag2 = flag;
-				if (flag2)
-				{
-					this.numMeleeAttacksMade++;
-					bool flag3 = this.numMeleeAttacksMade >= curJob.maxNumMeleeAttacks;
-					bool flag4 = flag3;
-					if (flag4)
-					{
-						this.EndJobWith(JobCondition.Succeeded);
-					}
-				}
-			};
-			bashIt.defaultCompleteMode = ToilCompleteMode.Never;
-			ToilFailConditions.EndOnDespawnedOrNull<Toil>(bashIt, TargetIndex.B, JobCondition.Succeeded);
-			ToilFailConditions.FailOn<Toil>(bashIt, new Func<bool>(this.hunterIsKilled));
-			return bashIt;
-		}
+        private Toil BashIt()
+        {
+            var bashIt = new Toil();
+            bashIt.tickAction = delegate
+            {
+                var actor = bashIt.actor;
+                var curJob = actor.jobs.curJob;
+                var thing = curJob.GetTarget(TargetIndex.B).Thing;
+                if (!actor.meleeVerbs.TryMeleeAttack(thing))
+                {
+                    return;
+                }
 
-		private bool hunterIsKilled()
-		{
-			return this.pawn.Dead || this.pawn.HitPoints == 0;
-		}
+                numMeleeAttacksMade++;
+                if (numMeleeAttacksMade >= curJob.maxNumMeleeAttacks)
+                {
+                    EndJobWith(JobCondition.Succeeded);
+                }
+            };
+            bashIt.defaultCompleteMode = ToilCompleteMode.Never;
+            bashIt.EndOnDespawnedOrNull(TargetIndex.B, JobCondition.Succeeded);
+            bashIt.FailOn(hunterIsKilled);
+            return bashIt;
+        }
 
-		private int numMeleeAttacksMade;
-	}
+        private bool hunterIsKilled()
+        {
+            return pawn.Dead || pawn.HitPoints == 0;
+        }
+    }
 }
-

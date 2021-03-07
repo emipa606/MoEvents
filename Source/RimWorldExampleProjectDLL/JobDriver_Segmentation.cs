@@ -7,133 +7,111 @@ using Verse.AI;
 
 namespace MoreIncidents
 {
-	public class JobDriver_Segmentation : JobDriver
-	{
+    public class JobDriver_Segmentation : JobDriver
+    {
+        private Pawn abom;
+
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return this.pawn.Reserve(this.job.targetA, this.job, 1, -1, null, errorOnFailed);
+            return pawn.Reserve(job.targetA, job, 1, -1, null, errorOnFailed);
         }
+
         protected override IEnumerable<Toil> MakeNewToils()
-		{
-			ToilFailConditions.FailOnDestroyedOrNull<JobDriver_Segmentation>(this, TargetIndex.A);
-			ToilFailConditions.FailOnDespawnedOrNull<JobDriver_Segmentation>(this, TargetIndex.A);
-			ToilFailConditions.FailOn<JobDriver_Segmentation>(this, new Func<bool>(this.eaterIsKilled));
-			Toil resCorpse = new Toil();
-			resCorpse.initAction = delegate()
-			{
-				Pawn actor = resCorpse.actor;
-				Thing thing = resCorpse.actor.CurJob.GetTarget(TargetIndex.A).Thing;
-				bool flag = !thing.Spawned || !this.Map.reservationManager.CanReserve(actor, thing, 1);
-				bool flag2 = flag;
-				if (flag2)
-				{
-					actor.jobs.EndCurrentJob(JobCondition.Incompletable, true);
-				}
-				else
-				{
-					this.Map.reservationManager.Reserve(actor, actor.CurJob, thing, 1);
-				}
-			};
-			resCorpse.defaultCompleteMode = ToilCompleteMode.Instant;
-			yield return resCorpse;
-			yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
-			yield return Toils_General.Wait(400);
-			Toil toil = new Toil
-			{
-				defaultCompleteMode = ToilCompleteMode.Instant
+        {
+            this.FailOnDestroyedOrNull(TargetIndex.A);
+            this.FailOnDespawnedOrNull(TargetIndex.A);
+            this.FailOn(eaterIsKilled);
+            var resCorpse = new Toil();
+            resCorpse.initAction = delegate
+            {
+                var actor = resCorpse.actor;
+                var thing = resCorpse.actor.CurJob.GetTarget(TargetIndex.A).Thing;
+                if (!thing.Spawned || !Map.reservationManager.CanReserve(actor, thing))
+                {
+                    actor.jobs.EndCurrentJob(JobCondition.Incompletable);
+                }
+                else
+                {
+                    Map.reservationManager.Reserve(actor, actor.CurJob, thing);
+                }
             };
-			toil.initAction = new Action(this.doStripCorpse);
-			yield return toil;
-			yield return Toils_General.Wait(60);
-			Toil toil2 = new Toil
-			{
-				defaultCompleteMode = ToilCompleteMode.Instant
-            };
-			toil2.initAction = new Action(this.doChewCorpse);
-			ToilEffects.WithEffect(toil2, EffecterDefOf.EatMeat, TargetIndex.A);
-			ToilFailConditions.EndOnDespawnedOrNull<Toil>(toil2, TargetIndex.A, JobCondition.Incompletable);
-			yield return toil2;
-			yield break;
-		}
+            resCorpse.defaultCompleteMode = ToilCompleteMode.Instant;
+            yield return resCorpse;
+            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
+            yield return Toils_General.Wait(400);
+            var toil = new Toil {defaultCompleteMode = ToilCompleteMode.Instant, initAction = doStripCorpse};
+            yield return toil;
+            yield return Toils_General.Wait(60);
+            var toil2 = new Toil {defaultCompleteMode = ToilCompleteMode.Instant, initAction = doChewCorpse};
+            toil2.WithEffect(EffecterDefOf.EatMeat, TargetIndex.A);
+            toil2.EndOnDespawnedOrNull(TargetIndex.A);
+            yield return toil2;
+        }
 
-		private bool eaterIsKilled()
-		{
-			return this.pawn.Dead || this.pawn.Downed || this.pawn.HitPoints == 0;
-		}
+        private bool eaterIsKilled()
+        {
+            return pawn.Dead || pawn.Downed || pawn.HitPoints == 0;
+        }
 
-		private void doStripCorpse()
-		{
-			Thing thing = this.pawn.CurJob.targetA.Thing;
-			Corpse corpse = thing as Corpse;
-			bool flag = corpse != null && corpse.AnythingToStrip();
-			bool flag2 = flag;
-			if (flag2)
-			{
-				corpse.Strip();
-			}
-		}
+        private void doStripCorpse()
+        {
+            var thing = pawn.CurJob.targetA.Thing;
+            var corpse = thing as Corpse;
+            var flag = corpse != null && corpse.AnythingToStrip();
+            var flag2 = flag;
+            if (flag2)
+            {
+                corpse.Strip();
+            }
+        }
 
-		private void doChewCorpse()
-		{
-			Corpse corpse = base.TargetThingA as Corpse;
-			bool flag = corpse != null;
-			bool flag2 = flag;
-			if (flag2)
-			{
-				IntVec3 position = corpse.Position;
-				List<Thing> list = theThing_Utility.ButcherCorpseProducts(corpse, this.pawn).ToList<Thing>();
-				Thing thing = null;
-				int num;
-				for (int i = 0; i < list.Count; i = num + 1)
-				{
-					bool flag3 = !GenPlace.TryPlaceThing(list[i], position, base.Map, ThingPlaceMode.Near, out thing, null);
-					bool flag4 = flag3;
-					if (flag4)
-					{
-						this.pawn.jobs.EndCurrentJob(JobCondition.Incompletable, true);
-					}
-					bool flag5 = thing != null;
-					bool flag6 = flag5;
-					if (flag6)
-					{
-						ForbidUtility.SetForbidden(thing, true, true);
-					}
-					num = i;
-				}
-				bool flag7 = this.pawn.needs.mood != null;
-				bool flag8 = flag7;
-				if (flag8)
-				{
-					this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("AteCorpse"), null);
-				}
-				corpse.Destroy(0);
-				IEnumerable<Faction> allFactions = Find.FactionManager.AllFactions;
-				Func<Faction, bool> predicate;
-				bool flag9 = (predicate = JobDriver_Segmentation.segment.letSegment) == null;
-				if (flag9)
-				{
-					predicate = (JobDriver_Segmentation.segment.letSegment = new Func<Faction, bool>(JobDriver_Segmentation.segment.JobSegment.doChewCorpse));
-				}
-				Faction faction = GenCollection.RandomElement<Faction>(allFactions.Where(predicate));
-				this.abom = PawnGenerator.GeneratePawn(MODefOf.MO_AbominationPawnKind, faction);
-				GenSpawn.Spawn(this.abom, position, base.Map);
-			}
-			this.pawn.jobs.EndCurrentJob(JobCondition.Succeeded, true);
-		}
+        private void doChewCorpse()
+        {
+            if (TargetThingA is Corpse corpse)
+            {
+                var position = corpse.Position;
+                var list = theThing_Utility.ButcherCorpseProducts(corpse, pawn).ToList();
+                int num;
+                for (var i = 0; i < list.Count; i = num + 1)
+                {
+                    if (!GenPlace.TryPlaceThing(list[i], position, Map, ThingPlaceMode.Near, out var thing))
+                    {
+                        pawn.jobs.EndCurrentJob(JobCondition.Incompletable);
+                    }
 
-		private Pawn abom;
+                    thing?.SetForbidden(true);
 
-		private sealed class segment
-		{
-			public bool doChewCorpse(Faction fac)
-			{
-				return fac.def.defName == "MO_AbominationFaction";
-			}
+                    num = i;
+                }
 
-			public static readonly JobDriver_Segmentation.segment JobSegment = new JobDriver_Segmentation.segment();
+                pawn.needs.mood?.thoughts.memories.TryGainMemory(ThoughtDef.Named("AteCorpse"));
 
-			public static Func<Faction, bool> letSegment;
-		}
-	}
+                corpse.Destroy();
+                var allFactions = Find.FactionManager.AllFactions;
+                Func<Faction, bool> predicate;
+                if ((predicate = segment.letSegment) == null)
+                {
+                    predicate = segment.letSegment = segment.JobSegment.doChewCorpse;
+                }
+
+                var faction = allFactions.Where(predicate).RandomElement();
+                abom = PawnGenerator.GeneratePawn(MODefOf.MO_AbominationPawnKind, faction);
+                GenSpawn.Spawn(abom, position, Map);
+            }
+
+            pawn.jobs.EndCurrentJob(JobCondition.Succeeded);
+        }
+
+        private sealed class segment
+        {
+            public static readonly segment JobSegment = new segment();
+
+            public static Func<Faction, bool> letSegment;
+
+            public bool doChewCorpse(Faction fac)
+            {
+                return fac.def.defName == "MO_AbominationFaction";
+            }
+        }
+    }
 }
-

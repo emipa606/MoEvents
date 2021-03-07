@@ -1,5 +1,4 @@
-﻿using System;
-using RimWorld.Planet;
+﻿using RimWorld.Planet;
 using Verse;
 
 namespace MoreIncidents.Settings
@@ -14,7 +13,7 @@ namespace MoreIncidents.Settings
         public override void FinalizeInit()
         {
             base.FinalizeInit();
-            Log.Message("Mo Events - Settings loaded", false);
+            Log.Message("Mo Events - Settings loaded");
             ME_ModSettings.ChangeDefPost();
         }
     }

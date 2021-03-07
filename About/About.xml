@@ -10,31 +10,32 @@
   </supportedVersions>
   <modDependencies />
   <loadAfter />
-  <description>Update of ilawz mod for RimWorld 1.1.
+  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+Update of ilawz mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=835151481
-
-[img]https://raw.githubusercontent.com/emipa606/RimWorld-Wrapper/master/Notice.png[/img]
-
-[img]https://i.imgur.com/GYswkZ7.png[/img]
-
-Support-chat:
-https://invite.gg/mlie
-
-Non-steam version:
-https://github.com/emipa606/MoEvents
 
 - Almost all of the update-work done by Taranchuk
 - Strings opened for translation
+- Added settings where you can change the trigger-chance of the events
 
---- Original Description ---
+[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+
+[table]
+	[tr]
+		[td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+		[td][url=https://github.com/emipa606/MoEvents][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+	[/tr]
+[/table]
+	
+[img]https://i.imgur.com/NOW7jU1.png[/img]
 
 This mod should speak for itself, it adds a few more events and incidents to the game.
 
 Current events/incidents added:
-
+    
 I think this mod is played best 'blind', but if you want to know what each event does, then here's a summary:
 
-- Abomination,
+- Abomination, 
 just like a normal rescue pod, but after a while the person that you rescued turns into an Abomination!
 Watch out for corpses lying around, cause they will go after them and transform them into abominations too. They also have extreme regenerative purposes, so killing them will be really hard.
 
@@ -73,9 +74,22 @@ They want us to heal one of their members that got hurt in a hunting trip, becau
 One of the tribes are grateful having you as friend, so they sent some spare food.
 They hope this will further help your friendship with them.
 
-Credits:
-- Skyarkhangel, for some of the event's updated code for A16
-- minami26, for most of the original events
+Credits: 
+    - Skyarkhangel, for some of the event's updated code for A16
+    - minami26, for most of the original events
 
-Found any bugs? Let me know!</description>
+Found any bugs? Let me know!
+
+
+[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[/list]
+</description>
 </ModMetaData>
+

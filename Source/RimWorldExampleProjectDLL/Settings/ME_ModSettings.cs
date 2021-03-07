@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -24,8 +22,8 @@ namespace MoreIncidents.Settings
 
         public void ChangeDef()
         {
-            List<IncidentDef> list = DefDatabase<IncidentDef>.AllDefs.ToList<IncidentDef>();
-            foreach (IncidentDef incidentDef in list)
+            var list = DefDatabase<IncidentDef>.AllDefs.ToList();
+            foreach (var incidentDef in list)
             {
                 switch (incidentDef.defName)
                 {
@@ -65,8 +63,8 @@ namespace MoreIncidents.Settings
 
         public static void ChangeDefPost()
         {
-            List<IncidentDef> list = DefDatabase<IncidentDef>.AllDefs.ToList<IncidentDef>();
-            foreach (IncidentDef incidentDef in list)
+            var list = DefDatabase<IncidentDef>.AllDefs.ToList();
+            foreach (var incidentDef in list)
             {
                 switch (incidentDef.defName)
                 {
@@ -110,20 +108,18 @@ namespace MoreIncidents.Settings
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look<float>(ref ME_ModSettings.StrokeBaseChance, "StrokeBaseChance", 1.5f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.SurvivalPodBaseChance, "SurvivalPodBaseChance", 1.5f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.NauseaBaseChance, "NauseaBaseChance", 3f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.InsectsBaseChance, "InsectsBaseChance", 1.5f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.PodCrashBaseChance, "PodCrashBaseChance", 2f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.ThanksgivingBaseChance, "ThanksgivingBaseChance", 2f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.ShipBreakBaseChance, "ShipBreakBaseChance", 1f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.AmnesiaBaseChance, "AmnesiaBaseChance", 2f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.RescueTraitorBaseChance, "RescueTraitorBaseChance", 2f, false);
-            Scribe_Values.Look<float>(ref ME_ModSettings.MigrationBaseChance, "MigrationBaseChance", 5f, false);
-            Scribe_Values.Look<int>(ref ME_ModSettings.MinRefireDaysRescueTraitor, "minRefireDaysRescueTraitor", 20, false);
-            Scribe_Values.Look<int>(ref ME_ModSettings.EarliestDayRescueTraitor, "earliestDayRescueTraitor", 25, false);
+            Scribe_Values.Look(ref StrokeBaseChance, "StrokeBaseChance", 1.5f);
+            Scribe_Values.Look(ref SurvivalPodBaseChance, "SurvivalPodBaseChance", 1.5f);
+            Scribe_Values.Look(ref NauseaBaseChance, "NauseaBaseChance", 3f);
+            Scribe_Values.Look(ref InsectsBaseChance, "InsectsBaseChance", 1.5f);
+            Scribe_Values.Look(ref PodCrashBaseChance, "PodCrashBaseChance", 2f);
+            Scribe_Values.Look(ref ThanksgivingBaseChance, "ThanksgivingBaseChance", 2f);
+            Scribe_Values.Look(ref ShipBreakBaseChance, "ShipBreakBaseChance", 1f);
+            Scribe_Values.Look(ref AmnesiaBaseChance, "AmnesiaBaseChance", 2f);
+            Scribe_Values.Look(ref RescueTraitorBaseChance, "RescueTraitorBaseChance", 2f);
+            Scribe_Values.Look(ref MigrationBaseChance, "MigrationBaseChance", 5f);
+            Scribe_Values.Look(ref MinRefireDaysRescueTraitor, "minRefireDaysRescueTraitor", 20);
+            Scribe_Values.Look(ref EarliestDayRescueTraitor, "earliestDayRescueTraitor", 25);
         }
-
-
     }
 }

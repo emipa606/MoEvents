@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <MO_Kill.reportString>Kill TargetA.</MO_Kill.reportString>
   <MO_Segmentation.reportString>Segmentation through TargetA.</MO_Segmentation.reportString>
   <MO_CrushDoor.reportString>Crush TargetB.</MO_CrushDoor.reportString>
-
-
 </LanguageData>

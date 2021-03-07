@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -8,96 +7,91 @@ namespace MoreIncidents
 {
     public class MOIncidentWorker_Insect : IncidentWorker
     {
-        public static Faction OfInsectoid
-        {
-            get
-            {
-                return Find.FactionManager.FirstFactionOfDef(FactionDef.Named("Insect"));
-            }
-        }
+        private static Faction OfInsectoid => Find.FactionManager.FirstFactionOfDef(FactionDef.Named("Insect"));
 
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            Map map = (Map)parms.target;
-            Pawn spelopedePawn = null;
-            Pawn megaspiderPawn = null;
-            PawnKindDef spelopedePawnKindDef = PawnKindDef.Named("Spelopede");
-            PawnKindDef megaspiderPawnKindDef = PawnKindDef.Named("Megaspider");
-            bool flag = spelopedePawnKindDef == null && megaspiderPawnKindDef == null;
-            bool flag2 = flag;
+            var map = (Map) parms.target;
+            var spelopedePawnKindDef = PawnKindDef.Named("Spelopede");
+            var megaspiderPawnKindDef = PawnKindDef.Named("Megaspider");
             bool result;
-            if (flag2)
+            if (spelopedePawnKindDef == null && megaspiderPawnKindDef == null)
             {
                 Log.Error("Can't spawn any insects");
                 result = false;
             }
             else
             {
-                IEnumerable<Pawn> source = map.mapPawns.AllPawns.Cast<Pawn>();
+                var source = map.mapPawns.AllPawns;
                 Func<Pawn, bool> predicate;
-                bool flag3 = (predicate = MOIncidentWorker_Insect.insect.isInsect) == null;
-                if (flag3)
+                if ((predicate = insect.isInsect) == null)
                 {
-                    predicate = (MOIncidentWorker_Insect.insect.isInsect = new Func<Pawn, bool>(MOIncidentWorker_Insect.insect.insects.TryExecute));
+                    predicate = insect.isInsect = insect.insects.TryExecute;
                 }
-                List<Pawn> source2 = source.Where(predicate).ToList<Pawn>();
-                double value = (double)(source2.Count<Pawn>() / 3);
-                int num = (int)Math.Round(value, 1);
-                bool flag4 = num <= 1;
-                bool flag5 = flag4;
-                if (flag5)
+
+                var source2 = source.Where(predicate).ToList();
+                double value = source2.Count / 3;
+                var num = (int) Math.Round(value, 1);
+                if (num <= 1)
                 {
                     num = 2;
                 }
-                IntVec3 intVec = new IntVec3();
-                bool flag6 = !RCellFinder.TryFindRandomPawnEntryCell(out intVec, map, 0f);
-                bool flag7 = flag6;
-                if (flag7)
+
+                if (!RCellFinder.TryFindRandomPawnEntryCell(out var intVec, map, 0f))
                 {
                     result = false;
                 }
                 else
                 {
-                    IntVec3 intVec2 = CellFinder.RandomClosewalkCellNear(intVec, map, 10);
-                    Rot4 rot = Rot4.FromAngleFlat((map.Center - intVec).AngleFlat);
+                    var intVec2 = CellFinder.RandomClosewalkCellNear(intVec, map, 10);
+                    var rot = Rot4.FromAngleFlat((map.Center - intVec).AngleFlat);
                     int num2;
-                    for (int i = 0; i < num; i = num2 + 1)
+                    for (var i = 0; i < num; i = num2 + 1)
                     {
-                        spelopedePawn = PawnGenerator.GeneratePawn(spelopedePawnKindDef, OfInsectoid);
-                        GenSpawn.Spawn(spelopedePawn, intVec2, map, rot, WipeMode.Vanish, false);
+                        var spelopedePawn = PawnGenerator.GeneratePawn(spelopedePawnKindDef, OfInsectoid);
+                        GenSpawn.Spawn(spelopedePawn, intVec2, map, rot);
                         spelopedePawn.needs.food.CurLevel = 0.01f;
-                        spelopedePawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent, null, false, false, null, false);
-                        spelopedePawn.mindState.exitMapAfterTick = Find.TickManager.TicksGame + Rand.Range(90000, 130000);
+                        spelopedePawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf
+                            .ManhunterPermanent);
+                        spelopedePawn.mindState.exitMapAfterTick =
+                            Find.TickManager.TicksGame + Rand.Range(90000, 130000);
                         num2 = i;
                     }
-                    for (int j = 0; j < num; j = num2 + 1)
+
+                    for (var j = 0; j < num; j = num2 + 1)
                     {
-                        megaspiderPawn = PawnGenerator.GeneratePawn(megaspiderPawnKindDef, OfInsectoid);
-                        GenSpawn.Spawn(megaspiderPawn, intVec2, map, rot, WipeMode.Vanish, false);
+                        var megaspiderPawn = PawnGenerator.GeneratePawn(megaspiderPawnKindDef, OfInsectoid);
+                        GenSpawn.Spawn(megaspiderPawn, intVec2, map, rot);
                         megaspiderPawn.needs.food.CurLevel = 0.01f;
-                        megaspiderPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent, null, false, false, null, false);
-                        megaspiderPawn.mindState.exitMapAfterTick = Find.TickManager.TicksGame + Rand.Range(90000, 130000);
+                        megaspiderPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf
+                            .ManhunterPermanent);
+                        megaspiderPawn.mindState.exitMapAfterTick =
+                            Find.TickManager.TicksGame + Rand.Range(90000, 130000);
                         num2 = j;
                     }
-                    Find.LetterStack.ReceiveLetter("MO_Insects".Translate(), "MO_InsectsDesc".Translate(), LetterDefOf.ThreatBig, new TargetInfo(intVec, map, false), null); //"A group of hungry insects have entered your area. They'll do anything to get your food!"
+
+                    Find.LetterStack.ReceiveLetter("MO_Insects".Translate(), "MO_InsectsDesc".Translate(),
+                        LetterDefOf.ThreatBig,
+                        new TargetInfo(intVec,
+                            map)); //"A group of hungry insects have entered your area. They'll do anything to get your food!"
                     Find.TickManager.slower.SignalForceNormalSpeedShort();
                     result = true;
                 }
             }
+
             return result;
         }
 
         private sealed class insect
         {
-            public bool TryExecute(Pawn p)
-            {
-                return (p.RaceProps.Humanlike && !GenHostility.HostileTo(p, Faction.OfPlayer) && !p.IsColonist) || p.IsPrisonerOfColony;
-            }
-
-            public static readonly MOIncidentWorker_Insect.insect insects = new MOIncidentWorker_Insect.insect();
+            public static readonly insect insects = new insect();
 
             public static Func<Pawn, bool> isInsect;
+
+            public bool TryExecute(Pawn p)
+            {
+                return p.RaceProps.Humanlike && !p.HostileTo(Faction.OfPlayer) && !p.IsColonist || p.IsPrisonerOfColony;
+            }
         }
     }
 }
-
