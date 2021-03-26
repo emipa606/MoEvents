@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -119,12 +119,11 @@ namespace MoreIncidents
                         var randomClosewalkCellNear = CellFinder.RandomClosewalkCellNear(mutplace, Map, 4);
                         var named = DefDatabase<ThingDef>.GetNamed("Filth_Blood");
                         FilthMaker.TryMakeFilth(randomClosewalkCellNear, Map, named, 4);
-                        if (rt.isPawn == null)
-                        {
-                            rt.isPawn = rt.IncidentRT.whichFac;
-                        }
+                        var abominationFaction =
+                            Find.FactionManager.AllFactions.InRandomOrder().FirstOrDefault(faction =>
+                                faction.def.defName == "MO_AbominationFaction");
 
-                        var request = new PawnGenerationRequest(MODefOf.MO_AbominationPawnKind, null,
+                        var request = new PawnGenerationRequest(MODefOf.MO_AbominationPawnKind, abominationFaction,
                             PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, true,
                             true, true, false);
                         theThing = PawnGenerator.GeneratePawn(request);
@@ -186,18 +185,6 @@ namespace MoreIncidents
             if (!Destroyed)
             {
                 Destroy();
-            }
-        }
-
-        private sealed class rt
-        {
-            public static readonly rt IncidentRT = new rt();
-
-            public static Func<Faction, bool> isPawn;
-
-            internal bool whichFac(Faction fac)
-            {
-                return fac.def.defName == "MO_AbominationFaction";
             }
         }
     }

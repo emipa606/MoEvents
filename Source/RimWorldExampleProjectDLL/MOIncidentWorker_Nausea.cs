@@ -49,7 +49,7 @@ namespace MoreIncidents
 
         private sealed class nausea
         {
-            public static readonly nausea IncidentNausea = new nausea();
+            public static readonly nausea IncidentNausea = new();
 
             public static Func<Pawn, bool> instancePawn;
 

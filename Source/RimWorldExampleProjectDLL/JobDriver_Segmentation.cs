@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -87,31 +86,15 @@ namespace MoreIncidents
                 pawn.needs.mood?.thoughts.memories.TryGainMemory(ThoughtDef.Named("AteCorpse"));
 
                 corpse.Destroy();
-                var allFactions = Find.FactionManager.AllFactions;
-                Func<Faction, bool> predicate;
-                if ((predicate = segment.letSegment) == null)
-                {
-                    predicate = segment.letSegment = segment.JobSegment.doChewCorpse;
-                }
 
-                var faction = allFactions.Where(predicate).RandomElement();
-                abom = PawnGenerator.GeneratePawn(MODefOf.MO_AbominationPawnKind, faction);
+                var abominationFaction =
+                    Find.FactionManager.AllFactions.InRandomOrder().FirstOrDefault(faction =>
+                        faction.def.defName == "MO_AbominationFaction");
+                abom = PawnGenerator.GeneratePawn(MODefOf.MO_AbominationPawnKind, abominationFaction);
                 GenSpawn.Spawn(abom, position, Map);
             }
 
             pawn.jobs.EndCurrentJob(JobCondition.Succeeded);
-        }
-
-        private sealed class segment
-        {
-            public static readonly segment JobSegment = new segment();
-
-            public static Func<Faction, bool> letSegment;
-
-            public bool doChewCorpse(Faction fac)
-            {
-                return fac.def.defName == "MO_AbominationFaction";
-            }
         }
     }
 }

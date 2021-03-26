@@ -41,7 +41,7 @@ namespace MoreIncidents
 
         private sealed class amnesiac
         {
-            public static readonly amnesiac IncidentAmnesia = new amnesiac();
+            public static readonly amnesiac IncidentAmnesia = new();
 
             public static Func<Pawn, bool> instancePawn;
 

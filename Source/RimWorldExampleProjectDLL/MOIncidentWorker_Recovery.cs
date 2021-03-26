@@ -61,7 +61,7 @@ namespace MoreIncidents
 
         private sealed class recover
         {
-            public static readonly recover IncidentRecovery = new recover();
+            public static readonly recover IncidentRecovery = new();
 
             public static Func<Pawn, bool> instancePawn;
 

@@ -51,7 +51,7 @@ namespace MoreIncidents
 
         private sealed class stroke
         {
-            public static readonly stroke IncidentStroke = new stroke();
+            public static readonly stroke IncidentStroke = new();
 
             public static Func<Pawn, bool> instancePawn;
 

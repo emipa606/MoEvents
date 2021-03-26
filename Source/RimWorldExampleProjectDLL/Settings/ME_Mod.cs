@@ -7,7 +7,7 @@ namespace MoreIncidents.Settings
     internal class ME_Mod : Mod
     {
         // Token: 0x0400003D RID: 61
-        public static ME_ModSettings settings;
+        private static ME_ModSettings settings;
 
         // Token: 0x0400003E RID: 62
         private Vector2 scrollPosition = Vector2.zero;
@@ -25,7 +25,7 @@ namespace MoreIncidents.Settings
         }
 
         // Token: 0x06000029 RID: 41 RVA: 0x0000376C File Offset: 0x0000196C
-        public void ResetSettings()
+        private void ResetSettings()
         {
             ME_ModSettings.StrokeBaseChance = 1.5f;
             ME_ModSettings.SurvivalPodBaseChance = 1.5f;

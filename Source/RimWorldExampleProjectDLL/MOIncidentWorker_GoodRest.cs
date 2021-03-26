@@ -38,7 +38,7 @@ namespace MoreIncidents
 
         private sealed class rest
         {
-            public static readonly rest IncidentRest = new rest();
+            public static readonly rest IncidentRest = new();
 
             public static Func<Pawn, bool> instancePawn;
 

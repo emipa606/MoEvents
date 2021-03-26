@@ -84,7 +84,7 @@ namespace MoreIncidents
 
         private sealed class insect
         {
-            public static readonly insect insects = new insect();
+            public static readonly insect insects = new();
 
             public static Func<Pawn, bool> isInsect;
 

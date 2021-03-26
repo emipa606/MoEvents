@@ -8,9 +8,9 @@ namespace MoreIncidents
 {
     public class MOIncidentWorker_Migration : IncidentWorker
     {
-        private Job job1 = new Job();
+        private Job job1 = new();
 
-        private Job job2 = new Job();
+        private Job job2 = new();
 
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
@@ -108,7 +108,7 @@ namespace MoreIncidents
 
         private sealed class migrate
         {
-            public static readonly migrate IncidentMigration = new migrate();
+            public static readonly migrate IncidentMigration = new();
 
             public static Func<Pawn, bool> letMigrate;
 

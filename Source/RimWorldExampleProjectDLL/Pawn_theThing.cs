@@ -125,7 +125,7 @@ namespace MoreIncidents
 
         private sealed class thing
         {
-            public static readonly thing IncidentThing = new thing();
+            public static readonly thing IncidentThing = new();
 
             public static Func<Hediff, bool> isInjury;
 

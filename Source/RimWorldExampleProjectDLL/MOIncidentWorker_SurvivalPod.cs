@@ -18,16 +18,18 @@ namespace MoreIncidents
             var item7 = ThingMaker.MakeThing(ThingDef.Named("MealSurvivalPack"));
             var item8 = ThingMaker.MakeThing(ThingDef.Named("MealSurvivalPack"));
             var item9 = ThingMaker.MakeThing(ThingDef.Named("Gun_Autopistol"));
-            var list = new List<Thing>();
-            list.Add(item);
-            list.Add(item2);
-            list.Add(item3);
-            list.Add(item4);
-            list.Add(item5);
-            list.Add(item6);
-            list.Add(item7);
-            list.Add(item8);
-            list.Add(item9);
+            var list = new List<Thing>
+            {
+                item,
+                item2,
+                item3,
+                item4,
+                item5,
+                item6,
+                item7,
+                item8,
+                item9
+            };
             var intVec = DropCellFinder.RandomDropSpot(map);
             DropPodUtility.DropThingsNear(intVec, map, list);
             Find.LetterStack.ReceiveLetter("MO_SurvivalPods".Translate(), "MO_SurvivalPodsDesc".Translate(),
