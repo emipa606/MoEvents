@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Special non-humanoid factions -->
+  <MO_AbominationFaction.label>Abomination</MO_AbominationFaction.label>
+  <MO_AbominationFaction.description>Les abominations sont des manifestations de chair lentes, massives et implacables. Leurs corps se tordent et se tordent pour guérir rapidement même les blessures majeures. Leur gueule mutilée suinte de bile toxique. Ils vont consommer et assimiler, cadavre par cadavre.</MO_AbominationFaction.description>
+  <MO_AbominationFaction.fixedName>abomination</MO_AbominationFaction.fixedName>
+  <MO_AbominationFaction.pawnsPlural>abominations</MO_AbominationFaction.pawnsPlural>
+</LanguageData>

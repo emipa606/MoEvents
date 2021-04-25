@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_Amnesia>Amnesie</MO_Amnesia>
+  <MO_AmnesiaDesc>{PAWN_nameDef} a soudainement oublié ce qu'{PAWN_gender ? he : she} faisait. {PAWN_gender ? He : She} ne se souvient pas quoi faire.</MO_AmnesiaDesc>
+  <MO_CalmWeather>Temps calme</MO_CalmWeather>
+  <MO_CalmWeatherDesc>Le temps est devenu remarquablement calme. Les éoliennes seront inutiles, mais tirer sera plus facile.</MO_CalmWeatherDesc>
+  <MO_CargoRain>Pluie de cargaison</MO_CargoRain>
+  <MO_CargoRainDesc>Un morceau de votre navire écrasé est tombé dans l'atmosphère, faites attention aux chutes de cargaison et aux nacelles de sauvetage.\n\nIl semble que ce morceau provienne de l'une des parties les plus riches du navire.</MO_CargoRainDesc>
+  <MO_Insects>Insectes</MO_Insects>
+  <MO_InsectsDesc>Un groupe d'insectes affamés est entré dans votre région. Ils feront tout pour avoir votre nourriture!</MO_InsectsDesc>
+  <MO_Migration>Migration</MO_Migration>
+  <MO_MigrationDesc>Un grand groupe d'animaux migre dans votre région. Vous pouvez les chasser, les apprivoiser ou les laisser.</MO_MigrationDesc>
+  <MO_Nausea>Nausée</MO_Nausea>
+  <MO_NauseaDesc>{PAWN_nameDef} est malade. {PAWN_gender ? He : She} vomit partout et a besoin de repos.</MO_NauseaDesc>
+  <MO_Recovery>Récupération</MO_Recovery>
+  <MO_RecoveryDesc>{PAWN_nameDef} a ressenti une poussée de puissance. Une de ses blessures a été guérie et {PAWN_gender ? he : she} se sent exceptionnellement bien.</MO_RecoveryDesc>
+  <MO_Stroke>AVC</MO_Stroke>
+  <MO_StrokeDesc>{PAWN_nameDef} a eu un accident vasculaire cérébral. {PAWN_gender ? He : She} a besoin de soins médicaux et de repos.</MO_StrokeDesc>
+  <MO_SurvivalPods>pods de survie</MO_SurvivalPods>
+  <MO_SurvivalPodsDesc>Un groupe de pods de survie a atterri à proximité, vous y trouverez des objets essentiels de survivants.</MO_SurvivalPodsDesc>
+  <MO_Thanksgiving>Thanksgiving</MO_Thanksgiving>
+  <MO_ThanksgivingDesc>L'une des tribus a remarqué que vos magasins d'alimentation étaient bas. Ils vous ont fourni de la nourriture, sans aucune condition.\n\nIls vous remercient d'être de si bons amis et ils espèrent que votre amitié sera encore renforcée par cet acte.</MO_ThanksgivingDesc>
+  <MO_TribalAid>Demande d'aide tribale</MO_TribalAid>
+  <MO_TribalAidDesc>L'une des tribus vous a envoyé un message. \n \n Bien que la langue des tribus ne soit pas familière, l'intention était claire: la faction tribale n'avait pas la capacité de soigner les blessures d'un de ses amis et ils ont plaidé que vous soignez leur ami .. \n \n Vous pouvez aider le tribal blessé à améliorer ses relations avec la faction correspondante, ou les capturer à des fins d'esclavage ou de recrutement.</MO_TribalAidDesc>
+  <MO_Trojan>Abomination</MO_Trojan>
+  <MO_TrojanDesc>{PAWN_nameDef} est devenu une abomination!</MO_TrojanDesc>
+  <MO_WellRested>Bien reposé</MO_WellRested>
+  <MO_WellRestedDesc>{PAWN_nameDef}se sent bien reposé et en forme.</MO_WellRestedDesc>
+  <MO_SettingHeader>Changer la chance de base des événements (mis à 0 pour désactiver):</MO_SettingHeader>
+  <MO_TrojanReFire>Jours minimum avant le départ:</MO_TrojanReFire>
+  <MO_TrojanFire>Jours minimum avant le feu :</MO_TrojanFire>
+</LanguageData>

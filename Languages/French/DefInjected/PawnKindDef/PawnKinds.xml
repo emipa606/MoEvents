@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_AbominationPawnKind.label>abomination</MO_AbominationPawnKind.label>
+  <MO_AbominationPawnKind.labelPlural>abominations</MO_AbominationPawnKind.labelPlural>
+  <MO_AbominationPawnKind.labelMale>abomination mâle</MO_AbominationPawnKind.labelMale>
+  <MO_AbominationPawnKind.labelMalePlural>abominations mâles</MO_AbominationPawnKind.labelMalePlural>
+  <MO_AbominationPawnKind.labelFemale>abomination femelle</MO_AbominationPawnKind.labelFemale>
+  <MO_AbominationPawnKind.labelFemalePlural>abominations femelle</MO_AbominationPawnKind.labelFemalePlural>
+</LanguageData>

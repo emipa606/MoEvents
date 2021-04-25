@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Abomination -->
+  <MO_AbominationRace.label>Abomination</MO_AbominationRace.label>
+  <MO_AbominationRace.description>Les abominations sont des manifestations de chair lentes, massives et implacables. Leurs corps se tordent et se tordent pour guérir rapidement même les blessures majeures. Leur gueule mutilée suinte de bile toxique. Ils vont consommer et assimiler, cadavre par cadavre.</MO_AbominationRace.description>
+  <MO_AbominationRace.tools.0.label>poing gauche</MO_AbominationRace.tools.0.label>
+  <MO_AbominationRace.tools.1.label>poing droit</MO_AbominationRace.tools.1.label>
+  <MO_AbominationRace.tools.2.label>dent</MO_AbominationRace.tools.2.label>
+  <MO_AbominationRace.tools.3.label>tête</MO_AbominationRace.tools.3.label>
+</LanguageData>

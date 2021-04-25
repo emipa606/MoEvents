@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_Nauseated.stages.0.label>Nauséeux</MO_Nauseated.stages.0.label>
+  <MO_Nauseated.stages.0.description>Je suis si malade et fatigué d'un coup ... j'ai besoin de repos.</MO_Nauseated.stages.0.description>
+  <MO_HadStroke.stages.0.label>AVC expérimenté</MO_HadStroke.stages.0.label>
+  <MO_HadStroke.stages.0.description>Je me suis soudainement senti déprimé et j'ai perdu le contrôle. Mon corps me fait mal, que s'est-il passé?</MO_HadStroke.stages.0.description>
+  <!-- <ThoughtDef>
+		<defName>MO_GoodRest</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>reposé</label>
+				<description>Je me sens tellement reposé et en forme, c'est génial!</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef> -->
+  <MO_Amnesia.stages.0.label>Blackout</MO_Amnesia.stages.0.label>
+  <MO_Amnesia.stages.0.description>J'ai soudainement tout oublié, ce n'est pas bon.</MO_Amnesia.stages.0.description>
+</LanguageData>

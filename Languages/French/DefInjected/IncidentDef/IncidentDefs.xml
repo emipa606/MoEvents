@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_Stroke.label>AVC</MO_Stroke.label>
+  <MO_SurvivalPod.label>pods de survie</MO_SurvivalPod.label>
+  <MO_Nausea.label>nausée</MO_Nausea.label>
+  <MO_Insects.label>insectes</MO_Insects.label>
+  <!-- Not working correctly right now
+  <IncidentDef>
+    <defName>MO_Recovery</defName>
+    <label>récupéré</label>
+    <targetType>BaseMap</targetType>
+    <WorkerClass>MoreIncidents.MOIncidentWorker_Recovery</WorkerClass>
+    <baseChance>2</baseChance>
+    <minRefireDays>30</minRefireDays>
+  </IncidentDef> -->
+  <MO_PodCrash.label>crash de podsh</MO_PodCrash.label>
+  <MO_Thanksgiving.label>thanksgiving</MO_Thanksgiving.label>
+  <!-- Bugged
+  <IncidentDef>
+    <defName>MO_Calm</defName>
+    <label>temps calme</label>
+    <targetType>BaseMap</targetType>
+    <WorkerClass>MoreIncidents.MOIncidentWorker_CalmWeather</WorkerClass>
+    <baseChance>2</baseChance>
+    <minRefireDays>8</minRefireDays>
+  </IncidentDef> -->
+  <MO_ShipBreak.label>morceaux de vaisseau</MO_ShipBreak.label>
+  <!-- Not working like I want to right now
+  <IncidentDef>
+    <defName>MO_GoodRest</defName>
+    <label>reposé</label>
+    <targetType>BaseMap</targetType>
+    <WorkerClass>MoreIncidents.MOIncidentWorker_GoodRest</WorkerClass>
+    <baseChance>4</baseChance>
+    <minRefireDays>5</minRefireDays>
+  </IncidentDef> -->
+  <MO_Amnesia.label>amnesie</MO_Amnesia.label>
+  <!-- What's this? -->
+  <MO_RescueTraitor.label>sauvez le traitre</MO_RescueTraitor.label>
+  <MO_Migration.label>migration</MO_Migration.label>
+</LanguageData>
