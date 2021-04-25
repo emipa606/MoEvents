@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_Nauseated.stages.0.label>噁心</MO_Nauseated.stages.0.label>
+  <MO_Nauseated.stages.0.description>突然厭倦了……我需要休息。</MO_Nauseated.stages.0.description>
+  <MO_HadStroke.stages.0.label>中風</MO_HadStroke.stages.0.label>
+  <MO_HadStroke.stages.0.description>突然覺得身體失去了控制並且疼痛。我發生了什麼事？</MO_HadStroke.stages.0.description>
+  <MO_Amnesia.stages.0.label>失憶</MO_Amnesia.stages.0.label>
+  <MO_Amnesia.stages.0.description>我突然忘記了一切，感覺真糟。</MO_Amnesia.stages.0.description>
+</LanguageData>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_Amnesia>失憶</MO_Amnesia>
+  <MO_AmnesiaDesc>{PAWN_nameDef}突然忘記了正在做的事情。 {PAWN_pronoun}不記得該做什麼.</MO_AmnesiaDesc>
+  <MO_CalmWeather>平和天氣</MO_CalmWeather>
+  <MO_CalmWeatherDesc>天氣剛剛變得非常平和。風力發電將會停擺，但射擊將會更精準。</MO_CalmWeatherDesc>
+  <MO_CargoRain>飛船失事</MO_CargoRain>
+  <MO_CargoRainDesc>有一大塊殖民者搭乘的星艦殘骸受引力影響落入大氣層，留意墜落在附近的救生/運輸艙。\n\n這些似乎是船上資源比較多的部分。</MO_CargoRainDesc>
+  <MO_Insects>蟲族</MO_Insects>
+  <MO_InsectsDesc>一群飢餓的蟲族進入了殖民地。他們會不計一切來獲得食物！</MO_InsectsDesc>
+  <MO_Migration>遷徙</MO_Migration>
+  <MO_MigrationDesc>一大群遷移動物正在通過您的地區。你可以狩獵，馴服或無視牠們。</MO_MigrationDesc>
+  <MO_Nausea>噁心</MO_Nausea>
+  <MO_NauseaDesc>{PAWN_nameDef}感到噁心。{PAWN_pronoun}嘔吐了，需要休息。</MO_NauseaDesc>
+  <MO_Recovery>恢復</MO_Recovery>
+  <MO_RecoveryDesc>{PAWN_nameDef}覺得力量激增。{PAWN_pronoun}有個傷病得到了治愈，{PAWN_pronoun}感到非常好。</MO_RecoveryDesc>
+  <MO_Stroke>中風</MO_Stroke>
+  <MO_StrokeDesc>{PAWN_nameDef}突然中風了。{PAWN_pronoun}需要醫療和休息。</MO_StrokeDesc>
+  <MO_SurvivalPods>運輸艙</MO_SurvivalPods>
+  <MO_SurvivalPodsDesc>附近有運輸艙墜落，您將在那裡找到一些生存必不可少的物品。</MO_SurvivalPodsDesc>
+  <MO_Thanksgiving>感恩</MO_Thanksgiving>
+  <MO_ThanksgivingDesc>盟友注意到你的糧食存量已經很低。他們願意無償給你提供了一些食物。\n\n他們珍視和你之間的友誼，並希望以此拉近雙方的關係。</MO_ThanksgivingDesc>
+  <MO_TribalAid>部落求援</MO_TribalAid>
+  <MO_TribalAidDesc>其中一個盟友給你發了條資訊。\n\n雖然語言不通但能了解意圖： 盟友無力治療傷員，懇求你伸出援手.\n\n選擇幫忙治療以增進關係，或為奴役/招募目的而俘虜他們。</MO_TribalAidDesc>
+  <MO_Trojan>濊變</MO_Trojan>
+  <MO_TrojanDesc>{PAWN_nameDef}已經變成了一個濊屍！</MO_TrojanDesc>
+  <MO_WellRested>休息好了</MO_WellRested>
+  <MO_WellRestedDesc>{PAWN_nameDef}感到舒適良好。</MO_WellRestedDesc>
+  <MO_SettingHeader>&lt;b&gt;事件基礎機率（設置為0以禁用）：&lt;/b&gt;</MO_SettingHeader>
+  <MO_TrojanReFire>觸發相同事件最短間隔天數：</MO_TrojanReFire>
+  <MO_TrojanFire>開局後觸發事件最短間隔天數：</MO_TrojanFire>
+</LanguageData>

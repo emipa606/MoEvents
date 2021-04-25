@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Special non-humanoid factions -->
+  <MO_AbominationFaction.label>濊屍</MO_AbominationFaction.label>
+  <MO_AbominationFaction.description>濊屍是一種緩慢笨拙的怪物。扭曲怪誕的身軀擁有極強的自癒能力及體表會分泌有毒體液，它能吃掉跟同化屍體。</MO_AbominationFaction.description>
+  <MO_AbominationFaction.fixedName>濊屍</MO_AbominationFaction.fixedName>
+  <MO_AbominationFaction.pawnsPlural>濊屍們</MO_AbominationFaction.pawnsPlural>
+</LanguageData>

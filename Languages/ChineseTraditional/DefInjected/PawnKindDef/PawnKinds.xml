@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_AbominationPawnKind.label>濊屍</MO_AbominationPawnKind.label>
+  <MO_AbominationPawnKind.labelPlural>濊屍們</MO_AbominationPawnKind.labelPlural>
+  <MO_AbominationPawnKind.labelMale>男濊屍</MO_AbominationPawnKind.labelMale>
+  <MO_AbominationPawnKind.labelMalePlural>男濊屍們</MO_AbominationPawnKind.labelMalePlural>
+  <MO_AbominationPawnKind.labelFemale>女濊屍</MO_AbominationPawnKind.labelFemale>
+  <MO_AbominationPawnKind.labelFemalePlural>女濊屍們</MO_AbominationPawnKind.labelFemalePlural>
+</LanguageData>

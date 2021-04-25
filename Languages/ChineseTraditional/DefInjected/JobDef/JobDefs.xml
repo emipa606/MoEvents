@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_Kill.reportString>殺死 TargetA.</MO_Kill.reportString>
+  <MO_Segmentation.reportString>通過TargetA分辨。</MO_Segmentation.reportString>
+  <MO_CrushDoor.reportString>打破 TargetB。</MO_CrushDoor.reportString>
+</LanguageData>

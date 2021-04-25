@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MO_Stroke.label>中風</MO_Stroke.label>
+  <MO_SurvivalPod.label>救生艙</MO_SurvivalPod.label>
+  <MO_Nausea.label>噁心</MO_Nausea.label>
+  <MO_Insects.label>蟲群</MO_Insects.label>
+  <MO_PodCrash.label>部落求援</MO_PodCrash.label>
+  <MO_Thanksgiving.label>感恩</MO_Thanksgiving.label>
+  <MO_ShipBreak.label>飛船失事</MO_ShipBreak.label>
+  <MO_Amnesia.label>健忘</MO_Amnesia.label>
+  <!-- What's this? -->
+  <MO_RescueTraitor.label>救援叛徒</MO_RescueTraitor.label>
+  <MO_Migration.label>遷徙</MO_Migration.label>
+</LanguageData>

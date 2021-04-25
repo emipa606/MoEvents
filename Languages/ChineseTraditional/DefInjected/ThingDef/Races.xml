@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Abomination -->
+  <MO_AbominationRace.label>濊屍</MO_AbominationRace.label>
+  <MO_AbominationRace.description>濊屍是一種緩慢笨拙的怪物。扭曲怪誕的身軀擁有極強的自癒能力及體表會分泌有毒體液，它能吃掉跟同化屍體。</MO_AbominationRace.description>
+  <MO_AbominationRace.tools.0.label>左拳</MO_AbominationRace.tools.0.label>
+  <MO_AbominationRace.tools.1.label>右拳</MO_AbominationRace.tools.1.label>
+  <MO_AbominationRace.tools.2.label>牙齒</MO_AbominationRace.tools.2.label>
+  <MO_AbominationRace.tools.3.label>頭</MO_AbominationRace.tools.3.label>
+  <MO_AbominationRace.race.meatLabel>穢肉</MO_AbominationRace.race.meatLabel>
+</LanguageData>
