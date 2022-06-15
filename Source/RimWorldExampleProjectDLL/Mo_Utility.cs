@@ -1,13 +1,12 @@
 ﻿using Verse;
 
-namespace MoreIncidents
+namespace MoreIncidents;
+
+public static class Mo_Utility
 {
-    public static class Mo_Utility
+    public static void HealHediff(Pawn pawn, Hediff hediff, int amount)
     {
-        public static void HealHediff(Pawn pawn, Hediff hediff, int amount)
-        {
-            hediff.Heal(amount);
-            pawn.health.hediffSet.DirtyCache();
-        }
+        hediff.Heal(amount);
+        pawn.health.hediffSet.DirtyCache();
     }
 }

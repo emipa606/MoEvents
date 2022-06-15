@@ -1,77 +1,76 @@
 ﻿using Verse;
 using Verse.AI;
 
-namespace MoreIncidents
+namespace MoreIncidents;
+
+public class JobGiver_Segmentation : ThinkNode_JobGiver
 {
-    public class JobGiver_Segmentation : ThinkNode_JobGiver
+    public const int SEARCH_DISTANCE = 225;
+
+    protected override Job TryGiveJob(Pawn pawn)
     {
-        public const int SEARCH_DISTANCE = 225;
-
-        protected override Job TryGiveJob(Pawn pawn)
+        var position = pawn.Position;
+        if (pawn.Map.fogGrid.IsFogged(position))
         {
-            var position = pawn.Position;
-            if (pawn.Map.fogGrid.IsFogged(position))
-            {
-                return null;
-            }
-
-            var traverseParams = TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, true);
-            var named = DefDatabase<JobDef>.GetNamed("MO_Segmentation");
-            if (pawn.jobs.curJob != null &&
-                (pawn.jobs.curJob.def == named || !pawn.jobs.curJob.checkOverrideOnExpire))
-            {
-                return null;
-            }
-
-            var corpse = FindMeatyCorpse(pawn, traverseParams);
-            if (corpse == null)
-            {
-                return null;
-            }
-
-            if (corpse.InnerPawn.def.race.Humanlike)
-            {
-                return new Job(named, corpse);
-            }
-
             return null;
         }
 
-        public static Pawn FindMeatyPrey(Pawn pawn, TraverseParms traverseParams)
+        var traverseParams = TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, true);
+        var named = DefDatabase<JobDef>.GetNamed("MO_Segmentation");
+        if (pawn.jobs.curJob != null &&
+            (pawn.jobs.curJob.def == named || !pawn.jobs.curJob.checkOverrideOnExpire))
         {
-            var thingRequest = ThingRequest.ForGroup(ThingRequestGroup.Pawn);
-
-            bool Predicate(Thing p)
-            {
-                var prey = p as Pawn;
-                return isPossiblePrey(prey, pawn);
-            }
-
-            return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
-                traverseParams, 100f, Predicate, null, -1) as Pawn;
+            return null;
         }
 
-        private static Corpse FindMeatyCorpse(Pawn pawn, TraverseParms traverseParams)
+        var corpse = FindMeatyCorpse(pawn, traverseParams);
+        if (corpse == null)
         {
-            var thingRequest = ThingRequest.ForGroup(ThingRequestGroup.Corpse);
-
-            bool Predicate(Thing corpse)
-            {
-                return pawn.Map.reservationManager.CanReserve(pawn, corpse);
-            }
-
-            return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
-                traverseParams, 100f, Predicate, null, -1) as Corpse;
+            return null;
         }
 
-        private static bool isPossiblePrey(Pawn prey, Pawn hunter)
+        if (corpse.InnerPawn.def.race.Humanlike)
         {
-            return hunter != prey && isNearby(hunter, prey);
+            return new Job(named, corpse);
         }
 
-        private static bool isNearby(Pawn pawn, Thing thing)
+        return null;
+    }
+
+    public static Pawn FindMeatyPrey(Pawn pawn, TraverseParms traverseParams)
+    {
+        var thingRequest = ThingRequest.ForGroup(ThingRequestGroup.Pawn);
+
+        bool Predicate(Thing p)
         {
-            return (pawn.Position - thing.Position).LengthHorizontalSquared <= 225f;
+            var prey = p as Pawn;
+            return isPossiblePrey(prey, pawn);
         }
+
+        return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
+            traverseParams, 100f, Predicate, null, -1) as Pawn;
+    }
+
+    private static Corpse FindMeatyCorpse(Pawn pawn, TraverseParms traverseParams)
+    {
+        var thingRequest = ThingRequest.ForGroup(ThingRequestGroup.Corpse);
+
+        bool Predicate(Thing corpse)
+        {
+            return pawn.Map.reservationManager.CanReserve(pawn, corpse);
+        }
+
+        return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
+            traverseParams, 100f, Predicate, null, -1) as Corpse;
+    }
+
+    private static bool isPossiblePrey(Pawn prey, Pawn hunter)
+    {
+        return hunter != prey && isNearby(hunter, prey);
+    }
+
+    private static bool isNearby(Pawn pawn, Thing thing)
+    {
+        return (pawn.Position - thing.Position).LengthHorizontalSquared <= 225f;
     }
 }

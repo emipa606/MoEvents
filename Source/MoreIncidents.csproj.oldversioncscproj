@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F7E6BCC-B747-48DF-9594-2CAA9BA50973}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MoreIncidents</RootNamespace>
+    <AssemblyName>MoreIncidents</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\1.2\Assemblies</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\1.2\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.2.2900</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JobDriver_CrushDoor.cs" />
+    <Compile Include="JobDriver_Kill.cs" />
+    <Compile Include="JobDriver_Segmentation.cs" />
+    <Compile Include="JobGiver_Kill.cs" />
+    <Compile Include="JobGiver_Segmentation.cs" />
+    <Compile Include="MOIncidentWorker_Amnesia.cs" />
+    <Compile Include="MOIncidentWorker_CalmWeather.cs" />
+    <Compile Include="MOIncidentWorker_GoodRest.cs" />
+    <Compile Include="MOIncidentWorker_Insect.cs" />
+    <Compile Include="MOIncidentWorker_Migration.cs" />
+    <Compile Include="MOIncidentWorker_Nausea.cs" />
+    <Compile Include="MOIncidentWorker_PodCrashTribal.cs" />
+    <Compile Include="MOIncidentWorker_Recovery.cs" />
+    <Compile Include="MOIncidentWorker_RescueTraitor.cs" />
+    <Compile Include="MOIncidentWorker_ShipBreak.cs" />
+    <Compile Include="MOIncidentWorker_Stroke.cs" />
+    <Compile Include="MOIncidentWorker_SurvivalPod.cs" />
+    <Compile Include="MOIncidentWorker_Thanksgiving.cs" />
+    <Compile Include="Mo_DefOf.cs" />
+    <Compile Include="Mo_Utility.cs" />
+    <Compile Include="Pawn_theThing.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\WorldComp.cs" />
+    <Compile Include="Settings\ME_ModSettings.cs" />
+    <Compile Include="Settings\ME_Mod.cs" />
+    <Compile Include="theThing_Utility.cs" />
+    <Compile Include="Ticker_RTWorker.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

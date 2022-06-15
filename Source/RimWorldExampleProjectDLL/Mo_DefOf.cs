@@ -1,11 +1,10 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace MoreIncidents
+namespace MoreIncidents;
+
+[DefOf]
+public static class MODefOf
 {
-    [DefOf]
-    public static class MODefOf
-    {
-        public static PawnKindDef MO_AbominationPawnKind;
-    }
+    public static PawnKindDef MO_AbominationPawnKind;
 }
