@@ -15,7 +15,7 @@ public class MOIncidentWorker_PodCrashTribal : IncidentWorker
         var intVec = DropCellFinder.RandomDropSpot(map);
         var faction = Find.FactionManager.RandomNonHostileFaction(true, true, true, TechLevel.Neolithic);
         var pawnGenerationRequest = new PawnGenerationRequest(PawnKindDefOf.Villager, faction,
-            PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, true, true, true,
+            PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, 1f, true, true, true,
             false);
         var pawn = PawnGenerator.GeneratePawn(pawnGenerationRequest);
         HealthUtility.DamageUntilDowned(pawn);

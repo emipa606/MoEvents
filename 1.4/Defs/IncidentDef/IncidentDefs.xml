@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>MO_Stroke</defName>
+    <label>stroke</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MoreIncidents.MOIncidentWorker_Stroke</workerClass>
+    <category>DiseaseHuman</category>
+    <baseChance>1.5</baseChance>
+    <minRefireDays>15</minRefireDays>
+    <pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>MO_SurvivalPod</defName>
+    <label>survival pod</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>Misc</category>
+    <workerClass>MoreIncidents.MOIncidentWorker_SurvivalPod</workerClass>
+    <baseChance>1.5</baseChance>
+    <minRefireDays>25</minRefireDays>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>MO_Nausea</defName>
+    <label>nausea</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>DiseaseHuman</category>
+    <workerClass>MoreIncidents.MOIncidentWorker_Nausea</workerClass>
+    <baseChance>3</baseChance>
+    <minRefireDays>5</minRefireDays>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>MO_Insects</defName>
+    <label>insect</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MoreIncidents.MOIncidentWorker_Insect</workerClass>
+    <category>ThreatBig</category>
+    <baseChance>1.5</baseChance>
+    <minRefireDays>30</minRefireDays>
+    <earliestDay>20</earliestDay>
+  </IncidentDef>
+  <!-- Not working correctly right now
+  <IncidentDef>
+    <defName>MO_Recovery</defName>
+    <label>recover</label>
+    <targetType>BaseMap</targetType>
+    <WorkerClass>MoreIncidents.MOIncidentWorker_Recovery</WorkerClass>
+    <baseChance>2</baseChance>
+    <minRefireDays>30</minRefireDays>
+  </IncidentDef>
+-->
+  <IncidentDef>
+    <defName>MO_PodCrash</defName>
+    <label>pod crash</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>Misc</category>
+    <workerClass>MoreIncidents.MOIncidentWorker_PodCrashTribal</workerClass>
+    <baseChance>2</baseChance>
+    <minRefireDays>20</minRefireDays>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>MO_Thanksgiving</defName>
+    <label>thanksgiving</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>Misc</category>
+    <workerClass>MoreIncidents.MOIncidentWorker_Thanksgiving</workerClass>
+    <baseChance>2</baseChance>
+    <minRefireDays>40</minRefireDays>
+  </IncidentDef>
+  <!-- Bugged
+  <IncidentDef>
+    <defName>MO_Calm</defName>
+    <label>calm weather</label>
+    <targetType>BaseMap</targetType>
+    <WorkerClass>MoreIncidents.MOIncidentWorker_CalmWeather</WorkerClass>
+    <baseChance>2</baseChance>
+    <minRefireDays>8</minRefireDays>
+  </IncidentDef>
+-->
+  <IncidentDef>
+    <defName>MO_ShipBreak</defName>
+    <label>ship break</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>Misc</category>
+    <workerClass>MoreIncidents.MOIncidentWorker_ShipBreak</workerClass>
+    <baseChance>1</baseChance>
+    <minRefireDays>15</minRefireDays>
+  </IncidentDef>
+  <!-- Not working like I want to right now
+  <IncidentDef>
+    <defName>MO_GoodRest</defName>
+    <label>good rest</label>
+    <targetType>BaseMap</targetType>
+    <WorkerClass>MoreIncidents.MOIncidentWorker_GoodRest</WorkerClass>
+    <baseChance>4</baseChance>
+    <minRefireDays>5</minRefireDays>
+  </IncidentDef>
+-->
+  <IncidentDef>
+    <defName>MO_Amnesia</defName>
+    <label>amnesia</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>Misc</category>
+    <workerClass>MoreIncidents.MOIncidentWorker_Amnesia</workerClass>
+    <baseChance>2</baseChance>
+    <minRefireDays>10</minRefireDays>
+  </IncidentDef>
+  <!-- What's this? -->
+  <IncidentDef>
+    <defName>MO_RescueTraitor</defName>
+    <label>rescue traitor</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>ThreatBig</category>
+    <workerClass>MoreIncidents.MOIncidentWorker_RescueTraitor</workerClass>
+    <baseChance>2</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <earliestDay>25</earliestDay>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>MO_Migration</defName>
+    <label>migration</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <category>Misc</category>
+    <workerClass>MoreIncidents.MOIncidentWorker_Migration</workerClass>
+    <baseChance>5</baseChance>
+    <minRefireDays>7</minRefireDays>
+    <earliestDay>1</earliestDay>
+  </IncidentDef>
+</Defs>

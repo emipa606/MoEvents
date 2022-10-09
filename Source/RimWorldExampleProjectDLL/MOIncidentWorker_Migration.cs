@@ -83,7 +83,7 @@ public class MOIncidentWorker_Migration : IncidentWorker
                 {
                     var pawn = PawnGenerator.GeneratePawn(
                         new PawnGenerationRequest(pawnKindDef, null, PawnGenerationContext.NonPlayer, -1, true,
-                            false, false, false, true, false, 1f, true, true, true, false));
+                            false, false, false, true, 1f, true, true, true, false));
                     var intVec2 = CellFinder.RandomClosewalkCellNear(loc, map, 10);
                     GenSpawn.Spawn(pawn, intVec2, map);
                     job1 = new Job(JobDefOf.Goto, intVec)

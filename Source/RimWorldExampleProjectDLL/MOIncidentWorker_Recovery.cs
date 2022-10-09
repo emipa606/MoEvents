@@ -16,13 +16,13 @@ public class MOIncidentWorker_Recovery : IncidentWorker
         }
 
         Hediff_Injury hediff_Injury = null;
-        foreach (var hediff_Injury2 in from x in pawn.health.hediffSet.GetHediffs<Hediff_Injury>()
-                 where x.Part == part
-                 select x)
+        foreach (var hediff_Injury2 in from hediff in pawn.health.hediffSet.hediffs
+                 where hediff.Part == part && hediff is Hediff_Injury
+                 select hediff)
         {
             if (hediff_Injury == null || hediff_Injury2.Severity > hediff_Injury.Severity)
             {
-                hediff_Injury = hediff_Injury2;
+                hediff_Injury = (Hediff_Injury)hediff_Injury2;
             }
         }
 

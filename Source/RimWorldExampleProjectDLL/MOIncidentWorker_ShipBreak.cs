@@ -87,9 +87,9 @@ public class MOIncidentWorker_ShipBreak : IncidentWorker
         var faction = Find.FactionManager.RandomNonHostileFaction(true, true, true, TechLevel.Spacer);
         var pawnGenerationRequest =
             new PawnGenerationRequest(PawnKindDefOf.SpaceRefugee, faction, PawnGenerationContext.NonPlayer, -1,
-                true, false, false, false, true, false, 1f, true, true, true, false);
+                true, false, false, false, true, 1f, true, true, true, false);
         var pawnGenerationRequest2 = new PawnGenerationRequest(PawnKindDefOf.SpaceRefugee, faction,
-            PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, true, true, true,
+            PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, 1f, true, true, true,
             false);
         var pawn = PawnGenerator.GeneratePawn(pawnGenerationRequest);
         var pawn2 = PawnGenerator.GeneratePawn(pawnGenerationRequest2);

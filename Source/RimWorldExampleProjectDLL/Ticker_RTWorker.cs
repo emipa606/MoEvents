@@ -70,7 +70,7 @@ public class Ticker_RTWorker : Building
                           !sq.CloseToEdge(Map, 20) && intVec.InBounds(Map) && !Map.areaManager.Home[sq], Map);
                 var faction = Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer);
                 Face = newThing = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.SpaceRefugee,
-                    faction, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, true,
+                    faction, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, 1f, true,
                     true, true, false));
                 Face.RaceProps.thinkTreeMain = DefDatabase<ThinkTreeDef>.GetNamed("HumanlikeTheThing");
             }
@@ -124,7 +124,7 @@ public class Ticker_RTWorker : Building
                             faction.def.defName == "MO_AbominationFaction");
 
                     var request = new PawnGenerationRequest(MODefOf.MO_AbominationPawnKind, abominationFaction,
-                        PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, true,
+                        PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, 1f, true,
                         true, true, false);
                     theThing = PawnGenerator.GeneratePawn(request);
                     theThing.mindState.mentalStateHandler.TryStartMentalState(
