@@ -1,5 +1,8 @@
 # Changelog for MoEvents
 
+1.4.3 - Abominations should spawn hostile
+
+
 1.4.2 - Fixed an overwrite of the thinktree, thanks ColKev1.
 Used DeepL to update translations for ChineseSimplified, German
 

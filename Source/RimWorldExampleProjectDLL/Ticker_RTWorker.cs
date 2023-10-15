@@ -109,47 +109,39 @@ public class Ticker_RTWorker : Building
             return;
         }
 
-        if (Face != null)
+        if (Face == null)
         {
-            if (!facemutated)
+            if (!Destroyed)
             {
-                if (!Face.Dead)
-                {
-                    mutplace = Face.Position;
-                    var randomClosewalkCellNear = CellFinder.RandomClosewalkCellNear(mutplace, Map, 4);
-                    var named = DefDatabase<ThingDef>.GetNamed("Filth_Blood");
-                    FilthMaker.TryMakeFilth(randomClosewalkCellNear, Map, named, 4);
-                    var abominationFaction =
-                        Find.FactionManager.AllFactions.InRandomOrder().FirstOrDefault(faction =>
-                            faction.def.defName == "MO_AbominationFaction");
+                Destroy();
+            }
 
-                    var request = new PawnGenerationRequest(MODefOf.MO_AbominationPawnKind, abominationFaction,
-                        PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, 1f, true,
-                        true, true, false);
-                    theThing = PawnGenerator.GeneratePawn(request);
-                    theThing.mindState.mentalStateHandler.TryStartMentalState(
-                        MentalStateDefOf.ManhunterPermanent, null, true);
-                    GenSpawn.Spawn(theThing, mutplace, Map);
-                    Find.LetterStack.ReceiveLetter("MO_Trojan".Translate(),
-                        "MO_TrojanDesc".Translate(Face.LabelShort, Face.Named("PAWN")), LetterDefOf.ThreatBig,
-                        theThing); //this.Face.LabelShort + "has turned into an Abomination!"
-                    if (!Face.Destroyed)
-                    {
-                        Face.Destroy();
-                    }
+            return;
+        }
 
-                    if (!Destroyed)
-                    {
-                        Destroy();
-                    }
+        if (!facemutated)
+        {
+            if (!Face.Dead)
+            {
+                mutplace = Face.Position;
+                var randomClosewalkCellNear = CellFinder.RandomClosewalkCellNear(mutplace, Map, 4);
+                var named = DefDatabase<ThingDef>.GetNamed("Filth_Blood");
+                FilthMaker.TryMakeFilth(randomClosewalkCellNear, Map, named, 4);
+                var abominationFaction =
+                    Find.FactionManager.AllFactions.InRandomOrder().FirstOrDefault(faction =>
+                        faction.def.defName == "MO_AbominationFaction");
 
-                    facemutated = true;
-                }
-                else
-                {
-                    facemutated = true;
-                }
+                var request = new PawnGenerationRequest(MODefOf.MO_AbominationPawnKind, abominationFaction,
+                    PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, 1f, true,
+                    true, true, false);
+                theThing = PawnGenerator.GeneratePawn(request);
 
+                //theThing.mindState.mentalStateHandler.TryStartMentalState(
+                //    MentalStateDefOf.ManhunterPermanent, null, true);
+                GenSpawn.Spawn(theThing, mutplace, Map);
+                Find.LetterStack.ReceiveLetter("MO_Trojan".Translate(),
+                    "MO_TrojanDesc".Translate(Face.LabelShort, Face.Named("PAWN")), LetterDefOf.ThreatBig,
+                    theThing); //this.Face.LabelShort + "has turned into an Abomination!"
                 if (!Face.Destroyed)
                 {
                     Face.Destroy();
@@ -159,6 +151,12 @@ public class Ticker_RTWorker : Building
                 {
                     Destroy();
                 }
+
+                facemutated = true;
+            }
+            else
+            {
+                facemutated = true;
             }
 
             if (!Face.Destroyed)
@@ -171,15 +169,15 @@ public class Ticker_RTWorker : Building
                 Destroy();
             }
         }
-        else
+
+        if (!Face.Destroyed)
         {
-            if (Face == null)
-            {
-                if (!Destroyed)
-                {
-                    Destroy();
-                }
-            }
+            Face.Destroy();
+        }
+
+        if (!Destroyed)
+        {
+            Destroy();
         }
 
         if (!Destroyed)
