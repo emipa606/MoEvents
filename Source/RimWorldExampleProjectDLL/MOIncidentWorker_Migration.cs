@@ -27,7 +27,7 @@ public class MOIncidentWorker_Migration : IncidentWorker
                 Find.LetterStack.ReceiveLetter("MO_Migration".Translate(), "MO_MigrationDesc".Translate(),
                     LetterDefOf.NeutralEvent,
                     new TargetInfo(intVec,
-                        map)); //A large group of animals are migrating through your area. You can hunt, tame or leave them.
+                        map)); //A large group of animals is migrating through your area. You can hunt, tame or leave them.
                 result = true;
             }
             else

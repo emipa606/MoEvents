@@ -29,39 +29,34 @@ public class JobGiver_Segmentation : ThinkNode_JobGiver
             return null;
         }
 
-        if (corpse.InnerPawn.def.race.Humanlike)
-        {
-            return new Job(named, corpse);
-        }
-
-        return null;
+        return corpse.InnerPawn.def.race.Humanlike ? new Job(named, corpse) : null;
     }
 
     public static Pawn FindMeatyPrey(Pawn pawn, TraverseParms traverseParams)
     {
         var thingRequest = ThingRequest.ForGroup(ThingRequestGroup.Pawn);
 
+        return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
+            traverseParams, 100f, Predicate, null, -1) as Pawn;
+
         bool Predicate(Thing p)
         {
             var prey = p as Pawn;
             return isPossiblePrey(prey, pawn);
         }
-
-        return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
-            traverseParams, 100f, Predicate, null, -1) as Pawn;
     }
 
     private static Corpse FindMeatyCorpse(Pawn pawn, TraverseParms traverseParams)
     {
         var thingRequest = ThingRequest.ForGroup(ThingRequestGroup.Corpse);
 
+        return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
+            traverseParams, 100f, Predicate, null, -1) as Corpse;
+
         bool Predicate(Thing corpse)
         {
             return pawn.Map.reservationManager.CanReserve(pawn, corpse);
         }
-
-        return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
-            traverseParams, 100f, Predicate, null, -1) as Corpse;
     }
 
     private static bool isPossiblePrey(Pawn prey, Pawn hunter)

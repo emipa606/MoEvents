@@ -13,18 +13,6 @@ public class MOIncidentWorker_ShipBreak : IncidentWorker
 
     private static ThingDef RandomPodContentsDef()
     {
-        bool IsLeather(ThingDef d)
-        {
-            return d.category == ThingCategory.Item && d.thingCategories != null &&
-                   d.thingCategories.Contains(ThingCategoryDefOf.Leathers);
-        }
-
-        bool IsMeat(ThingDef d)
-        {
-            return d.category == ThingCategory.Item && d.thingCategories != null &&
-                   d.thingCategories.Contains(ThingCategoryDefOf.MeatRaw);
-        }
-
         var numLeathers = DefDatabase<ThingDef>.AllDefs.Where(IsLeather).Count();
         var numMeats = DefDatabase<ThingDef>.AllDefs.Where(IsMeat).Count();
         var allDefs = from d in DefDatabase<ThingDef>.AllDefs
@@ -48,6 +36,18 @@ public class MOIncidentWorker_ShipBreak : IncidentWorker
             return num;
         }, out var returnValue);
         return returnValue;
+
+        bool IsLeather(ThingDef d)
+        {
+            return d.category == ThingCategory.Item && d.thingCategories != null &&
+                   d.thingCategories.Contains(ThingCategoryDefOf.Leathers);
+        }
+
+        bool IsMeat(ThingDef d)
+        {
+            return d.category == ThingCategory.Item && d.thingCategories != null &&
+                   d.thingCategories.Contains(ThingCategoryDefOf.MeatRaw);
+        }
     }
 
     protected override bool TryExecuteWorker(IncidentParms parms)

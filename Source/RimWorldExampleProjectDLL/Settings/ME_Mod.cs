@@ -73,7 +73,7 @@ internal class ME_Mod : Mod
         var rect13 = rect12.RightHalf().Rounded();
         Widgets.Label(rect11, "MO_Stroke".Translate());
         Widgets.Label(rect13, ME_ModSettings.StrokeBaseChance.ToString());
-        ME_ModSettings.StrokeBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.StrokeBaseChance = Widgets.HorizontalSlider(
             new Rect(rect10.xMin + rect10.height + 10f, rect10.y, rect10.width - ((rect10.height * 2f) + 20f),
                 rect10.height), ME_ModSettings.StrokeBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -86,7 +86,7 @@ internal class ME_Mod : Mod
         var rect19 = rect18.RightHalf().Rounded();
         Widgets.Label(rect17, "MO_SurvivalPods".Translate());
         Widgets.Label(rect19, ME_ModSettings.SurvivalPodBaseChance.ToString());
-        ME_ModSettings.SurvivalPodBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.SurvivalPodBaseChance = Widgets.HorizontalSlider(
             new Rect(rect16.xMin + rect16.height + 10f, rect16.y, rect16.width - ((rect16.height * 2f) + 20f),
                 rect16.height), ME_ModSettings.SurvivalPodBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -99,7 +99,7 @@ internal class ME_Mod : Mod
         var rect25 = rect24.RightHalf().Rounded();
         Widgets.Label(rect23, "MO_Nausea".Translate());
         Widgets.Label(rect25, ME_ModSettings.NauseaBaseChance.ToString());
-        ME_ModSettings.NauseaBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.NauseaBaseChance = Widgets.HorizontalSlider(
             new Rect(rect22.xMin + rect22.height + 10f, rect22.y, rect22.width - ((rect22.height * 2f) + 20f),
                 rect22.height), ME_ModSettings.NauseaBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -112,7 +112,7 @@ internal class ME_Mod : Mod
         var rect31 = rect30.RightHalf().Rounded();
         Widgets.Label(rect29, "MO_Insects".Translate());
         Widgets.Label(rect31, ME_ModSettings.InsectsBaseChance.ToString());
-        ME_ModSettings.InsectsBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.InsectsBaseChance = Widgets.HorizontalSlider(
             new Rect(rect28.xMin + rect28.height + 10f, rect28.y, rect28.width - ((rect28.height * 2f) + 20f),
                 rect28.height), ME_ModSettings.InsectsBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -125,7 +125,7 @@ internal class ME_Mod : Mod
         var rect37 = rect36.RightHalf().Rounded();
         Widgets.Label(rect35, "MO_TribalAid".Translate());
         Widgets.Label(rect37, ME_ModSettings.PodCrashBaseChance.ToString());
-        ME_ModSettings.PodCrashBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.PodCrashBaseChance = Widgets.HorizontalSlider(
             new Rect(rect34.xMin + rect34.height + 10f, rect34.y, rect34.width - ((rect34.height * 2f) + 20f),
                 rect34.height), ME_ModSettings.PodCrashBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -138,7 +138,7 @@ internal class ME_Mod : Mod
         var rect43 = rect42.RightHalf().Rounded();
         Widgets.Label(rect41, "MO_Thanksgiving".Translate());
         Widgets.Label(rect43, ME_ModSettings.ThanksgivingBaseChance.ToString());
-        ME_ModSettings.ThanksgivingBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.ThanksgivingBaseChance = Widgets.HorizontalSlider(
             new Rect(rect40.xMin + rect40.height + 10f, rect40.y, rect40.width - ((rect40.height * 2f) + 20f),
                 rect40.height), ME_ModSettings.ThanksgivingBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -151,7 +151,7 @@ internal class ME_Mod : Mod
         var rect49 = rect48.RightHalf().Rounded();
         Widgets.Label(rect47, "MO_CargoRain".Translate());
         Widgets.Label(rect49, ME_ModSettings.ShipBreakBaseChance.ToString());
-        ME_ModSettings.ShipBreakBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.ShipBreakBaseChance = Widgets.HorizontalSlider(
             new Rect(rect46.xMin + rect46.height + 10f, rect46.y, rect46.width - ((rect46.height * 2f) + 20f),
                 rect46.height), ME_ModSettings.ShipBreakBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -164,7 +164,7 @@ internal class ME_Mod : Mod
         var rect55 = rect54.RightHalf().Rounded();
         Widgets.Label(rect53, "MO_Amnesia".Translate());
         Widgets.Label(rect55, ME_ModSettings.AmnesiaBaseChance.ToString());
-        ME_ModSettings.AmnesiaBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.AmnesiaBaseChance = Widgets.HorizontalSlider(
             new Rect(rect52.xMin + rect52.height + 10f, rect52.y, rect52.width - ((rect52.height * 2f) + 20f),
                 rect52.height), ME_ModSettings.AmnesiaBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -177,7 +177,7 @@ internal class ME_Mod : Mod
         var rect61 = rect60.RightHalf().Rounded();
         Widgets.Label(rect59, "MO_Migration".Translate());
         Widgets.Label(rect61, ME_ModSettings.MigrationBaseChance.ToString());
-        ME_ModSettings.MigrationBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.MigrationBaseChance = Widgets.HorizontalSlider(
             new Rect(rect58.xMin + rect58.height + 10f, rect58.y, rect58.width - ((rect58.height * 2f) + 20f),
                 rect58.height), ME_ModSettings.MigrationBaseChance, 0f, 10f, true);
         listing_Standard.Gap(30f);
@@ -190,7 +190,7 @@ internal class ME_Mod : Mod
         var rect67 = rect66.RightHalf().Rounded();
         Widgets.Label(rect65, "MO_Trojan".Translate());
         Widgets.Label(rect67, ME_ModSettings.RescueTraitorBaseChance.ToString());
-        ME_ModSettings.RescueTraitorBaseChance = Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.RescueTraitorBaseChance = Widgets.HorizontalSlider(
             new Rect(rect64.xMin + rect64.height + 10f, rect64.y, rect64.width - ((rect64.height * 2f) + 20f),
                 rect64.height), ME_ModSettings.RescueTraitorBaseChance, 0f, 10f, true);
         listing_Standard.Gap(10f);
@@ -203,7 +203,7 @@ internal class ME_Mod : Mod
         var rect134 = rect133.RightHalf().Rounded();
         Widgets.Label(rect132, "MO_TrojanReFire".Translate());
         Widgets.Label(rect134, ME_ModSettings.MinRefireDaysRescueTraitor.ToString());
-        ME_ModSettings.MinRefireDaysRescueTraitor = (int)Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.MinRefireDaysRescueTraitor = (int)Widgets.HorizontalSlider(
             new Rect(rect131.xMin + rect131.height + 10f, rect131.y, rect131.width - ((rect131.height * 2f) + 20f),
                 rect131.height), ME_ModSettings.MinRefireDaysRescueTraitor, 10f, 400f, true);
         listing_Standard.Gap(10f);
@@ -216,7 +216,7 @@ internal class ME_Mod : Mod
         var rect140 = rect139.RightHalf().Rounded();
         Widgets.Label(rect138, "MO_TrojanFire".Translate());
         Widgets.Label(rect140, ME_ModSettings.EarliestDayRescueTraitor.ToString());
-        ME_ModSettings.EarliestDayRescueTraitor = (int)Widgets.HorizontalSlider_NewTemp(
+        ME_ModSettings.EarliestDayRescueTraitor = (int)Widgets.HorizontalSlider(
             new Rect(rect137.xMin + rect137.height + 10f, rect137.y, rect137.width - ((rect137.height * 2f) + 20f),
                 rect137.height), ME_ModSettings.EarliestDayRescueTraitor, 5f, 280f, true);
 

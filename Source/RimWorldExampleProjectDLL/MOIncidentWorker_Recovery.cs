@@ -45,8 +45,8 @@ public class MOIncidentWorker_Recovery : IncidentWorker
             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("MO_Healed"));
             Find.LetterStack.ReceiveLetter("MO_Recovery".Translate(),
                 "MO_RecoveryDesc".Translate(pawn.Label, pawn.Named("PAWN")), LetterDefOf.PositiveEvent, pawn);
-            //pawn.Name + " felt a surge of power. One of his injuries got healed and he is feeling exceptionally well.", LetterDefOf.PositiveEvent, pawn, null);
-            //pawn.Name + " felt a surge of power. One of her injuries got healed and she is feeling exceptionally well.", LetterDefOf.PositiveEvent, pawn, null);
+            //pawn.Name + " felt a surge of power. One of his injuries got healed, and he is feeling exceptionally well.", LetterDefOf.PositiveEvent, pawn, null);
+            //pawn.Name + " felt a surge of power. One of her injuries got healed, and she is feeling exceptionally well.", LetterDefOf.PositiveEvent, pawn, null);
             HealInjuryRandom(pawn, 30f);
             result = true;
         }

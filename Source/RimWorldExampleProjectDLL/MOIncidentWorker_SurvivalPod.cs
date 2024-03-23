@@ -6,13 +6,15 @@ namespace MoreIncidents;
 
 public class MOIncidentWorker_SurvivalPod : IncidentWorker
 {
+    private readonly ThingDef Hyperweave = DefDatabase<ThingDef>.GetNamedSilentFail("Hyperweave");
+
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
         var map = (Map)parms.target;
-        var item = ThingMaker.MakeThing(ThingDef.Named("Apparel_Pants"), ThingDefOf.Hyperweave);
-        var item2 = ThingMaker.MakeThing(ThingDef.Named("Apparel_BasicShirt"), ThingDefOf.Hyperweave);
-        var item3 = ThingMaker.MakeThing(ThingDef.Named("Apparel_Jacket"), ThingDefOf.Hyperweave);
-        var item4 = ThingMaker.MakeThing(ThingDef.Named("Apparel_Tuque"), ThingDefOf.Hyperweave);
+        var item = ThingMaker.MakeThing(ThingDef.Named("Apparel_Pants"), Hyperweave);
+        var item2 = ThingMaker.MakeThing(ThingDef.Named("Apparel_BasicShirt"), Hyperweave);
+        var item3 = ThingMaker.MakeThing(ThingDef.Named("Apparel_Jacket"), Hyperweave);
+        var item4 = ThingMaker.MakeThing(ThingDef.Named("Apparel_Tuque"), Hyperweave);
         var item5 = ThingMaker.MakeThing(ThingDef.Named("MealSurvivalPack"));
         var item6 = ThingMaker.MakeThing(ThingDef.Named("MealSurvivalPack"));
         var item7 = ThingMaker.MakeThing(ThingDef.Named("MealSurvivalPack"));

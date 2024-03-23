@@ -67,14 +67,14 @@ public class JobGiver_Kill : ThinkNode_JobGiver
     {
         var thingRequest = ThingRequest.ForGroup(ThingRequestGroup.Pawn);
 
+        return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
+            traverseParams, 100f, Predicate, null, -1) as Pawn;
+
         bool Predicate(Thing p)
         {
             var prey = p as Pawn;
             return isPossiblePrey(prey, pawn);
         }
-
-        return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingRequest, PathEndMode.Touch,
-            traverseParams, 100f, Predicate, null, -1) as Pawn;
     }
 
     private static bool isPossiblePrey(Pawn prey, Pawn hunter)

@@ -26,7 +26,7 @@ public class Pawn_theThing : Pawn
 
         mindState.mentalStateHandler.neverFleeIndividual = true;
 
-        if (health.hediffSet.HasTendableInjury())
+        if (health.hediffSet.HasTendableHediff())
         {
             TickHeal(true);
         }
@@ -137,7 +137,7 @@ public class Pawn_theThing : Pawn
 
         public bool getHediffsHeal(Hediff h)
         {
-            return !(h is Hediff_AddedPart);
+            return h is not Hediff_AddedPart;
         }
     }
 }
