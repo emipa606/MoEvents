@@ -11,11 +11,7 @@ public class JobDriver_Kill : JobDriver
 
     public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
-        //Log.Message("this " + this.pawn.Label + " try to reserve " + this.job.targetA.Label);
         return true;
-/*
-            return pawn.Reserve(job.targetA, job, 1, -1, null, errorOnFailed);
-*/
     }
 
     protected override IEnumerable<Toil> MakeNewToils()

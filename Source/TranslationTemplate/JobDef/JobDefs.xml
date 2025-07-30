@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Crush TargetB. -->
+  <MO_CrushDoor.reportString>Crush TargetB.</MO_CrushDoor.reportString>
+  <!-- EN: Kill TargetA. -->
+  <MO_Kill.reportString>Kill TargetA.</MO_Kill.reportString>
+  <!-- EN: Segmentation through TargetA. -->
+  <MO_Segmentation.reportString>Segmentation through TargetA.</MO_Segmentation.reportString>
+</LanguageData>

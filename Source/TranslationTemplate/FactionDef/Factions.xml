@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Abomination -->
+  <MO_AbominationFaction.label>Abomination</MO_AbominationFaction.label>
+  <!-- EN: Abominations are slow, hulking, relentless manifestations of flesh. Their bodies twist and contort to heal even major wounds quickly. Their mangled maw seeps with toxic bile. They will consume and assimilate, corpse by corpse. -->
+  <MO_AbominationFaction.description>Abominations are slow, hulking, relentless manifestations of flesh. Their bodies twist and contort to heal even major wounds quickly. Their mangled maw seeps with toxic bile. They will consume and assimilate, corpse by corpse.</MO_AbominationFaction.description>
+  <!-- EN: abomination -->
+  <MO_AbominationFaction.fixedName>abomination</MO_AbominationFaction.fixedName>
+  <!-- EN: leader -->
+  <MO_AbominationFaction.leaderTitle>leader</MO_AbominationFaction.leaderTitle>
+  <!-- EN: member -->
+  <MO_AbominationFaction.pawnSingular>member</MO_AbominationFaction.pawnSingular>
+  <!-- EN: abominations -->
+  <MO_AbominationFaction.pawnsPlural>abominations</MO_AbominationFaction.pawnsPlural>
+</LanguageData>

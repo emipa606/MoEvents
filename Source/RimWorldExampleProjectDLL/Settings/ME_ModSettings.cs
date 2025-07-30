@@ -19,7 +19,7 @@ internal class ME_ModSettings : ModSettings
     internal static int MinRefireDaysRescueTraitor = 20;
     internal static int EarliestDayRescueTraitor = 25;
 
-    public void ChangeDef()
+    public static void ChangeDef()
     {
         var list = DefDatabase<IncidentDef>.AllDefs.ToList();
         foreach (var incidentDef in list)

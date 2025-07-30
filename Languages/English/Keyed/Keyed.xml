@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MO_Amnesia>Amnesia</MO_Amnesia>
   <MO_AmnesiaDesc>{PAWN_nameDef} suddenly forgot what {PAWN_gender ? he : she} was doing. {PAWN_gender ? He : She} can't remember what to do.</MO_AmnesiaDesc>
@@ -26,7 +26,7 @@
   <MO_TrojanDesc>{PAWN_nameDef} has turned into an Abomination!</MO_TrojanDesc>
   <MO_WellRested>Well rested</MO_WellRested>
   <MO_WellRestedDesc>{PAWN_nameDef} is feeling well rested and fit.</MO_WellRestedDesc>
-  <MO_SettingHeader>&lt;b&gt;Change events base chance (set to 0 to disable):&lt;/b&gt;</MO_SettingHeader>
+  <MO_SettingHeader>&lt;b>Change events base chance (set to 0 to disable):&lt;/b></MO_SettingHeader>
   <MO_TrojanReFire>Minimum days before refire :</MO_TrojanReFire>
   <MO_TrojanFire>Minimum days before fire :</MO_TrojanFire>
   <MO_Version>Installed mod-version: {0}</MO_Version>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MO_Amnesia>Amnesie</MO_Amnesia>
   <MO_AmnesiaDesc>{PAWN_nameDef} a soudainement oublié ce qu'{PAWN_gender ? he : she} faisait. {PAWN_gender ? He : She} ne se souvient pas quoi faire.</MO_AmnesiaDesc>

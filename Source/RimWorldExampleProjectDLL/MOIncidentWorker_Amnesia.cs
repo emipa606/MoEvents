@@ -27,8 +27,6 @@ public class MOIncidentWorker_Amnesia : IncidentWorker
             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("MO_Amnesia"));
             Find.LetterStack.ReceiveLetter("MO_Amnesia".Translate(),
                 "MO_AmnesiaDesc".Translate(pawn.Label, pawn.Named("PAWN")), LetterDefOf.NegativeEvent, pawn);
-            //pawn.Name + " suddenly forgot what he was doing. He can't remember what to do."
-            //pawn.Name + " suddenly forgot what she was doing. She can't remember what to do.", LetterDefOf.NegativeEvent, pawn, null);
             result = true;
         }
         else
@@ -41,7 +39,7 @@ public class MOIncidentWorker_Amnesia : IncidentWorker
 
     private sealed class amnesiac
     {
-        public static readonly amnesiac IncidentAmnesia = new amnesiac();
+        public static readonly amnesiac IncidentAmnesia = new();
 
         public static Func<Pawn, bool> instancePawn;
 

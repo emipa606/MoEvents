@@ -98,13 +98,13 @@ public class MOIncidentWorker_ShipBreak : IncidentWorker
         var corpse = (Corpse)ThingMaker.MakeThing(pawn2.RaceProps.corpseDef);
         corpse.InnerPawn = pawn2;
         HealthUtility.DamageUntilDead(pawn2);
-        DropPodUtility.MakeDropPodAt(intVec, map, new ActiveDropPodInfo
+        DropPodUtility.MakeDropPodAt(intVec, map, new ActiveTransporterInfo
         {
             SingleContainedThing = pawn,
             openDelay = 180,
             leaveSlag = true
         });
-        DropPodUtility.MakeDropPodAt(intVec2, map, new ActiveDropPodInfo
+        DropPodUtility.MakeDropPodAt(intVec2, map, new ActiveTransporterInfo
         {
             SingleContainedThing = corpse,
             openDelay = 180,

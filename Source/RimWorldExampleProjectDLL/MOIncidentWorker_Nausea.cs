@@ -33,8 +33,6 @@ public class MOIncidentWorker_Nausea : IncidentWorker
                 .Translate().Formatted(pawn.Named("PAWN"))
                 .AdjustedFor(pawn), LetterDefOf.NegativeEvent, pawn);
 
-        //pawn.Name + " is feeling nauseous. He vomited all over and needs rest.", LetterDefOf.NegativeEvent, pawn, null);
-        //pawn.Name + " is feeling nauseous. She vomited all over and needs rest.", LetterDefOf.NegativeEvent, pawn, null);
         int num;
         for (var i = 0; i < 10; i = num + 1)
         {
@@ -49,7 +47,7 @@ public class MOIncidentWorker_Nausea : IncidentWorker
 
     private sealed class nausea
     {
-        public static readonly nausea IncidentNausea = new nausea();
+        public static readonly nausea IncidentNausea = new();
 
         public static Func<Pawn, bool> instancePawn;
 

@@ -24,8 +24,6 @@ public class MOIncidentWorker_GoodRest : IncidentWorker
             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("MO_GoodRest"));
             Find.LetterStack.ReceiveLetter("MO_WellRested".Translate(),
                 "MO_WellRestedDesc".Translate(pawn.Label, pawn.Named("PAWN")), LetterDefOf.PositiveEvent, pawn);
-            //pawn.Name + " is feeling well rested and fit.", LetterDefOf.PositiveEvent, pawn, null);
-            //pawn.Name + " is feeling well rested and fit.", LetterDefOf.PositiveEvent, pawn, null);
             result = true;
         }
         else
@@ -38,7 +36,7 @@ public class MOIncidentWorker_GoodRest : IncidentWorker
 
     private sealed class rest
     {
-        public static readonly rest IncidentRest = new rest();
+        public static readonly rest IncidentRest = new();
 
         public static Func<Pawn, bool> instancePawn;
 

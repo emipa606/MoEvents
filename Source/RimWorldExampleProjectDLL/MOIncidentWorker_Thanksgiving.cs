@@ -56,7 +56,7 @@ public class MOIncidentWorker_Thanksgiving : IncidentWorker
             Find.LetterStack.ReceiveLetter("MO_Thanksgiving".Translate(), "MO_ThanksgivingDesc".Translate(),
                 LetterDefOf.PositiveEvent,
                 new TargetInfo(intVec,
-                    map)); //"One of the tribes has noticed your food stores are low. They have provided you with some food, no strings attached.\n\nThey thank you for being such good friends and they hope your friendship will be further cemented by this act."
+                    map)); //"One of the tribes has noticed your food stores are low. They have provided you with some food, no strings attached.\n\nThey thank you for being such good friends, and they hope your friendship will be further cemented by this act."
             result = true;
         }
         else

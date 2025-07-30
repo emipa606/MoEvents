@@ -53,7 +53,7 @@ public class Ticker_RTWorker : Building
         mutjustspawned = true;
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         if (mutjustspawned)
@@ -79,7 +79,7 @@ public class Ticker_RTWorker : Building
             {
                 if (!doOnce)
                 {
-                    DropPodUtility.MakeDropPodAt(intVec, Map, new ActiveDropPodInfo
+                    DropPodUtility.MakeDropPodAt(intVec, Map, new ActiveTransporterInfo
                     {
                         SingleContainedThing = Face,
                         openDelay = 180,
@@ -151,13 +151,9 @@ public class Ticker_RTWorker : Building
                 {
                     Destroy();
                 }
+            }
 
-                facemutated = true;
-            }
-            else
-            {
-                facemutated = true;
-            }
+            facemutated = true;
 
             if (!Face.Destroyed)
             {

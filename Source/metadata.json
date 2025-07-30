@@ -2,5 +2,17 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "2",
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "Patches": false,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 72856,
+  "LinesOfXML": 36284,
+  "CodeBaseSize": 80,
+  "LastXmlCleaning": "2025-07-30T21:20:42.8430518+02:00",
+  "SocialImageSet": true,
+  "SearchTags": [
+    "events",
+    " incidents"
+  ]
 }

@@ -1,14 +1,12 @@
 using RimWorld.Planet;
-using Verse;
 
 namespace MoreIncidents.Settings;
 
 internal class WorldComp(World world) : WorldComponent(world)
 {
-    public override void FinalizeInit()
+    public override void FinalizeInit(bool fromLoad)
     {
-        base.FinalizeInit();
-        Log.Message("Mo Events - Settings loaded");
+        base.FinalizeInit(fromLoad);
         ME_ModSettings.ChangeDefPost();
     }
 }

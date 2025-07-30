@@ -16,7 +16,7 @@ public class Pawn_theThing : Pawn
 
     private int ticksToNextRepair;
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         if (Find.TickManager.TicksGame % 250 == 0)
@@ -64,7 +64,7 @@ public class Pawn_theThing : Pawn
             return;
         }
 
-        ticksToNextRepair = 15;
+        ticksToNextRepair = TicksBetweenRepairs;
         if (allowMiracles)
         {
             def.repairEffect?.Spawn();
@@ -124,7 +124,7 @@ public class Pawn_theThing : Pawn
 
     private sealed class thing
     {
-        public static readonly thing IncidentThing = new thing();
+        public static readonly thing IncidentThing = new();
 
         public static Func<Hediff, bool> isInjury;
 

@@ -27,8 +27,6 @@ public class MOIncidentWorker_Stroke : IncidentWorker
             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("MO_HadStroke"));
             Find.LetterStack.ReceiveLetter("MO_Stroke".Translate(),
                 "MO_StrokeDesc".Translate(pawn.Label, pawn.Named("PAWN")), LetterDefOf.NegativeEvent, pawn);
-            //pawn.Name + " had a stroke. He needs medical care and rest.", LetterDefOf.NegativeEvent, pawn, null);
-            //pawn.Name + " had a stroke. She needs medical care and rest.", LetterDefOf.NegativeEvent, pawn, null);
             int num;
             for (var i = 0; i < 10; i = num + 1)
             {
@@ -51,7 +49,7 @@ public class MOIncidentWorker_Stroke : IncidentWorker
 
     private sealed class stroke
     {
-        public static readonly stroke IncidentStroke = new stroke();
+        public static readonly stroke IncidentStroke = new();
 
         public static Func<Pawn, bool> instancePawn;
 

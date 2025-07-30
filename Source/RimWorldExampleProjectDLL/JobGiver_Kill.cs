@@ -30,7 +30,7 @@ public class JobGiver_Kill : ThinkNode_JobGiver
             return null;
         }
 
-        var pawnPath = pawn.Map.pathFinder.FindPath(pawn.Position, pawn2, TraverseParms.For(pawn));
+        var pawnPath = pawn.Map.pathFinder.FindPathNow(pawn.Position, pawn2, TraverseParms.For(pawn));
         var building_Door = pawnPath.FirstBlockingBuilding(out var intVec, pawn) as Building_Door;
         pawnPath.ReleaseToPool();
         if (building_Door == null)

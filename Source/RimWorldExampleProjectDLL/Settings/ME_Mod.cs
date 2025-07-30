@@ -26,7 +26,7 @@ internal class ME_Mod : Mod
     public override void WriteSettings()
     {
         base.WriteSettings();
-        settings.ChangeDef();
+        ME_ModSettings.ChangeDef();
     }
 
     private void ResetSettings()
@@ -47,7 +47,7 @@ internal class ME_Mod : Mod
 
     public override void DoSettingsWindowContents(Rect rect)
     {
-        settings.ChangeDef();
+        ME_ModSettings.ChangeDef();
         var rect2 = new Rect(rect.x, rect.y, rect.width - 30f, rect.height);
         var listing_Standard = new Listing_Standard();
         Widgets.BeginScrollView(rect, ref scrollPosition, rect2);

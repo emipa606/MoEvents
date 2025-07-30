@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: amnesia -->
+  <MO_Amnesia.label>amnesia</MO_Amnesia.label>
+  <!-- EN: insect -->
+  <MO_Insects.label>insect</MO_Insects.label>
+  <!-- EN: migration -->
+  <MO_Migration.label>migration</MO_Migration.label>
+  <!-- EN: nausea -->
+  <MO_Nausea.label>nausea</MO_Nausea.label>
+  <!-- EN: pod crash -->
+  <MO_PodCrash.label>pod crash</MO_PodCrash.label>
+  <!-- EN: rescue traitor -->
+  <MO_RescueTraitor.label>rescue traitor</MO_RescueTraitor.label>
+  <!-- EN: ship break -->
+  <MO_ShipBreak.label>ship break</MO_ShipBreak.label>
+  <!-- EN: stroke -->
+  <MO_Stroke.label>stroke</MO_Stroke.label>
+  <!-- EN: survival pod -->
+  <MO_SurvivalPod.label>survival pod</MO_SurvivalPod.label>
+  <!-- EN: thanksgiving -->
+  <MO_Thanksgiving.label>thanksgiving</MO_Thanksgiving.label>
+</LanguageData>

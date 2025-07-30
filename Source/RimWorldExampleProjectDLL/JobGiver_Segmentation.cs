@@ -66,6 +66,6 @@ public class JobGiver_Segmentation : ThinkNode_JobGiver
 
     private static bool isNearby(Pawn pawn, Thing thing)
     {
-        return (pawn.Position - thing.Position).LengthHorizontalSquared <= 225f;
+        return (pawn.Position - thing.Position).LengthHorizontalSquared <= SEARCH_DISTANCE;
     }
 }
