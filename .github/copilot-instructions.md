@@ -1,35 +1,37 @@
-# GitHub Copilot Instructions for RimWorld Mod Development
+# GitHub Copilot Instructions for Mo'Events (Continued)
 
 ## Mod Overview and Purpose
-This mod, "MoreIncidents", is designed to expand and enrich the gameplay experience of RimWorld by introducing new incidents and events. These incidents add unpredictability and depth to the narrative, offering players unique challenges and opportunities as they manage their colony in a dynamic world.
+**Mo'Events (Continued)** is an updated version of the original mod by ilawz. The update was primarily carried out by Taranchuk, with added translations from gast and qux. This mod enriches the RimWorld experience by introducing a variety of new events and incidents that enhance gameplay unpredictability and offer new narrative opportunities for players. Whether you're managing unexpected transformations in rescued pawns or dealing with random acts of generosity from friendly tribes, Mo'Events adds excitement and complexity to the world of RimWorld.
 
 ## Key Features and Systems
-- **Incident Workers**: Classes like `MOIncidentWorker_Amnesia`, `MOIncidentWorker_GoodRest`, and `MOIncidentWorker_Insect` introduce new events to the game. Each worker decides the conditions under which the event can occur and what happens when it does.
-- **Job Drivers**: Classes such as `JobDriver_CrushDoor`, `JobDriver_Kill`, and `JobDriver_Segmentation` implement specialized pawn behaviors, defining tasks and how they should be executed.
-- **World Components**: The `WorldComp` class represents global game state changes and interactions at the world level.
-- **Utility Classes**: `Mo_Utility` and `theThing_Utility` provide general-purpose helper methods that support larger systems within the mod.
-- **DefOf Classes**: `MODefOf` is a static class used to define constants for various game definitions to avoid hardcoded strings, improving code maintainability and readability.
+- **Abomination Event:** Similar to a rescue pod event, the rescued person turns into an Abomination after a while. They can transform corpses into more Abominations, making them particularly challenging to deal with.
+- **Amnesia Event:** A random pawn forgets their current task, causing them to abandon their current work and start fresh.
+- **Animal Migration Event:** A pack of animals migrates through your colony, which can be hunted, tamed, or ignored.
+- **Calm Weather Event:** Calm weather decreases wind turbine efficiency but improves shooting accuracy.
+- **Hungry Insects Event:** Starving, manhunting insects invade the area, seeking food.
+- **Luxury Cargo Pods Event:** Chunks from a luxurious part of a spaceship crash nearby, containing valuables and possibly survivors.
+- **Nausea and Stroke Events:** Random pawns may suddenly become sick or incapacitated, requiring immediate attention.
+- **Survival Pods Event:** Survival pods land nearby with essential supplies and weapons.
+- **Tribal Aid and Thanksgiving Events:** Friendly tribes offer assistance or gifts under certain conditions, impacting faction relations.
 
 ## Coding Patterns and Conventions
-- **Naming Conventions**: Classes and methods are named using PascalCase. Classes convey their purpose explicitly, such as `IncidentWorker`, `JobDriver`, and `Utility`.
-- **Class Structure**: Each class addresses a specific part of the game's system, using clear accesses such as `public` and `internal` appropriately.
-- **Error Handling**: Consider using try-catch blocks within critical methods to handle and log exceptions that might occur during gameplay.
-- **Method Structure**: Methods are well-defined with a clear single responsibility, making it easy to understand their purpose and function within the game logic.
-
+- **C#** is used for coding the main mod functionality. The mod structure follows RimWorld's modding framework using `Mod`, `IncidentWorker`, `Pawn`, and `JobDriver` classes.
+- **Classes:** Generally use public access for core game integration (`IncidentWorker` and other high-level game interactions), with internal or private access for helper methods and classes.
+- **Methods:** Employ descriptive names indicating their action and context, such as `TryExecute`, `BashIt`, and `SpawnRandomMigrationAt`.
+  
 ## XML Integration
-- **Patch XMLs**: Although XML parsing errors noted, it is vital to maintain well-structured XML files for data-driven configurations, such as defining incidents and jobs without recompiling code.
-- **Error Handling**: Review XML files for correct formatting and ensure all necessary elements and attributes are explicitly defined to avoid parsing errors.
+- XML files define data-driven aspects such as translations and writeable strings for events and incidents.
+- Strings are made available for localization, allowing for translations (currently Chinese and French).
 
 ## Harmony Patching
-- **Patch Usage**: Use the Harmony library to modify and extend game behavior safely. Consider annotations like `[HarmonyPatch]` to target specific methods or classes in the base game.
-- **Non-invasive Edits**: Ensure patches respect compatibility by using Postfix and Prefix methods to alter or extend game methods without disrupting other mods.
-- **Performance Considerations**: Implement conditional checks within patches to minimize the impact on game performance, especially in frequently called methods.
-
+- Use **Harmony** for runtime modifications of the game code, ensuring compatibility and reducing invasive changes to the game's codebase.
+- Maintain clear separation between original game logic and modifications through modular patches.
+  
 ## Suggestions for Copilot
-- **Method Stubs**: Utilize Copilot for generating method stubs, especially for new incident types or utility methods.
-- **Refactoring Suggestions**: Suggest refactoring opportunities for existing methods to simplify logic or split complex methods into more modular components.
-- **Validation Tasks**: Propose validation tasks for user inputs and new game settings to prevent runtime errors.
-- **Documentation Comments**: Use Copilot to automatically generate XML documentation comments for public methods and classes to enhance codebase readability.
-- **Harmony Patch Templates**: Leverage Copilot to create templates for standard Harmony patches, ensuring consistent structure across different patches.
+- **Localization and Strings:** Generate suggestions for missing translations and identify hardcoded strings that should be externalized for easier localization.
+- **Event Logic:** Assist in creating new event logic by integrating existing patterns (public `IncidentWorker` methods) and suggesting new interactions or consequences.
+- **Code Optimization:** Identify opportunities within existing methods for optimization, such as reducing complexity in `TryExecute` logic.
+- **Harmony Improvements:** Suggest additional Harmony patches to fix bugs or improve compatibility between mods.
+- **Testing and Debugging:** Suggest methods for efficient testing strategies, such as creating debugging utilities to simulate events and incidents.
 
-By streamlining these elements and fostering a clean, efficient coding environment, you are better positioned to develop engaging and complex mods for the RimWorld community.
+For any bugs or suggestions, feel free to reach out via the mod's GitHub repository or the designated support Discord channel.

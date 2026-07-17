@@ -1,5 +1,8 @@
 # Changelog for MoEvents
 
+1.6.1 - The thing should now be hostile correctly, thanks Mjolniar
+
+
 1.6.0 - Mod updated for 1.6 and passed autotests
 
 
