@@ -31,7 +31,7 @@ public class Pawn_theThing : Pawn
             TickHeal(true);
         }
 
-        if (!Dead || !Downed)
+        if (!Dead && !Downed)
         {
             var num = ticksSinceStatusUpdate;
             ticksSinceStatusUpdate = num + 1;
@@ -57,9 +57,8 @@ public class Pawn_theThing : Pawn
 
     private void TickHeal(bool allowMiracles)
     {
-        var num = ticksToNextRepair;
-        ticksToNextRepair = num - 1;
-        if (num <= 0)
+        ticksToNextRepair--;
+        if (ticksToNextRepair > 0)
         {
             return;
         }
@@ -71,7 +70,7 @@ public class Pawn_theThing : Pawn
         }
 
         var hediffs = GetHediffs(allowMiracles);
-        if (hediffs.Length != 0)
+        if (hediffs.Length == 0)
         {
             return;
         }
