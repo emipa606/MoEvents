@@ -81,4 +81,4 @@ Found any bugs? Let me know!
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/MoEvents?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2035143365) | tags: events, incidents
+[![Image](https://img.shields.io/github/v/release/emipa606/MoEvents?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2035143365) | events, incidents

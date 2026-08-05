@@ -101,7 +101,7 @@ public class Pawn_theThing : Pawn
             Func<Hediff, bool> predicate;
             if ((predicate = thing.isInjury) == null)
             {
-                predicate = thing.isInjury = thing.IncidentThing.getHediffsInjury;
+                predicate = thing.isInjury = thing.getHediffsInjury;
             }
 
             result = hediffs.Where(predicate).ToArray();
@@ -112,7 +112,7 @@ public class Pawn_theThing : Pawn
             Func<Hediff, bool> predicate2;
             if ((predicate2 = thing.isHeal) == null)
             {
-                predicate2 = thing.isHeal = thing.IncidentThing.getHediffsHeal;
+                predicate2 = thing.isHeal = thing.getHediffsHeal;
             }
 
             result = hediffs2.Where(predicate2).ToArray();
@@ -129,12 +129,12 @@ public class Pawn_theThing : Pawn
 
         public static Func<Hediff, bool> isHeal;
 
-        public bool getHediffsInjury(Hediff h)
+        public static bool getHediffsInjury(Hediff h)
         {
             return h is Hediff_Injury;
         }
 
-        public bool getHediffsHeal(Hediff h)
+        public static bool getHediffsHeal(Hediff h)
         {
             return h is not Hediff_AddedPart;
         }

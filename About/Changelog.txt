@@ -1,5 +1,8 @@
 # Changelog for MoEvents
 
+1.6.2 - Fixes for the Thing, thanks Spangles
+
+
 1.6.1 - The thing should now be hostile correctly, thanks Mjolniar
 
 

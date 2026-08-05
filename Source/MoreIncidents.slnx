@@ -6,4 +6,29 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="RimWorldExampleProjectDLL/MoreIncidents.csproj" />
+  <Folder Name="/XML/1.6/Defs/ThoughtDef/">
+    <File Path="../1.6/Defs/ThoughtDef/Thoughts.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/Keyed.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/ThinkTreeDefs/">
+    <File Path="../1.6/Defs/ThinkTreeDefs/HumanlikeTheThing.xml" />
+    <File Path="../1.6/Defs/ThinkTreeDefs/TheThing.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/JobDef/">
+    <File Path="../1.6/Defs/JobDef/JobDefs.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/IncidentDef/">
+    <File Path="../1.6/Defs/IncidentDef/IncidentDefs.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/ThingDef/">
+    <File Path="../1.6/Defs/ThingDef/Factions.xml" />
+    <File Path="../1.6/Defs/ThingDef/PawnKinds.xml" />
+    <File Path="../1.6/Defs/ThingDef/Races.xml" />
+    <File Path="../1.6/Defs/ThingDef/Ticker.xml" />
+  </Folder>
 </Solution>
