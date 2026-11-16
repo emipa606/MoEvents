@@ -6,17 +6,16 @@ namespace MoreIncidents;
 
 public class Ticker_RTWorker : Building
 {
+    private Pawn Face;
     private bool doOnce;
 
     private bool doononce;
 
-    private Pawn Face;
-
     private bool facemutated;
 
-    private int intervalcut = 3000;
-
     private IntVec3 intVec;
+
+    private int intervalcut = 3000;
 
     private bool mutjustspawned = true;
 
@@ -75,23 +74,20 @@ public class Ticker_RTWorker : Building
                 Face.RaceProps.thinkTreeMain = DefDatabase<ThinkTreeDef>.GetNamed("HumanlikeTheThing");
             }
 
-            if (timer == 0f)
+            if (timer == 0f && !doOnce)
             {
-                if (!doOnce)
+                DropPodUtility.MakeDropPodAt(intVec, Map, new ActiveTransporterInfo
                 {
-                    DropPodUtility.MakeDropPodAt(intVec, Map, new ActiveTransporterInfo
-                    {
-                        SingleContainedThing = Face,
-                        openDelay = 180,
-                        leaveSlag = true
-                    });
-                    HealthUtility.DamageUntilDowned(Face);
-                    string text = "LetterLabelRefugeePodCrash".Translate();
-                    string text2 = "RefugeePodCrash".Translate(Face.Named("PAWN")).AdjustedFor(Face);
-                    Find.LetterStack.ReceiveLetter(text, text2, LetterDefOf.NeutralEvent,
-                        new TargetInfo(intVec, Map));
-                    doOnce = true;
-                }
+                    SingleContainedThing = Face,
+                    openDelay = 180,
+                    leaveSlag = true
+                });
+                HealthUtility.DamageUntilDowned(Face);
+                string text = "LetterLabelRefugeePodCrash".Translate();
+                string text2 = "RefugeePodCrash".Translate(Face.Named("PAWN")).AdjustedFor(Face);
+                Find.LetterStack.ReceiveLetter(text, text2, LetterDefOf.NeutralEvent,
+                    new TargetInfo(intVec, Map));
+                doOnce = true;
             }
         }
 

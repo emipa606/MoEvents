@@ -14,9 +14,9 @@ public class MOIncidentWorker_Amnesia : IncidentWorker
         var map = (Map)parms.target;
         IEnumerable<Pawn> freeColonists = map.mapPawns.FreeColonists;
         Func<Pawn, bool> predicate;
-        if ((predicate = amnesiac.instancePawn) == null)
+        if ((predicate = Amnesiac.instancePawn) == null)
         {
-            predicate = amnesiac.instancePawn = amnesiac.IncidentAmnesia.TryExecute;
+            predicate = Amnesiac.instancePawn = Amnesiac.TryExecute;
         }
 
         bool result;
@@ -37,13 +37,13 @@ public class MOIncidentWorker_Amnesia : IncidentWorker
         return result;
     }
 
-    private sealed class amnesiac
+    private sealed class Amnesiac
     {
-        public static readonly amnesiac IncidentAmnesia = new();
+        public static readonly Amnesiac IncidentAmnesia = new();
 
         public static Func<Pawn, bool> instancePawn;
 
-        public bool TryExecute(Pawn col)
+        public static bool TryExecute(Pawn col)
         {
             return col.IsColonist;
         }

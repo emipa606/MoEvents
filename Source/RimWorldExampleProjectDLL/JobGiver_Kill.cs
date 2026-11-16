@@ -95,8 +95,8 @@ public class JobGiver_Kill : ThinkNode_JobGiver
             }
             else
             {
-                result = prey.Faction == Faction.OfPlayer || prey.Faction == Faction.OfPlayer ||
-                         prey.IsPrisonerOfColony || prey.Faction.HostileTo(Faction.OfPlayer);
+                result = prey.Faction == Faction.OfPlayer || prey.IsPrisonerOfColony ||
+                         prey.Faction.HostileTo(Faction.OfPlayer);
             }
         }
         else
@@ -164,7 +164,7 @@ public class JobGiver_Kill : ThinkNode_JobGiver
         bool result;
         if (prey.RaceProps.Humanlike)
         {
-            result = prey.RaceProps.Humanlike || prey.RaceProps.Humanlike;
+            result = prey.RaceProps.Humanlike;
         }
         else
         {

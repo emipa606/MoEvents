@@ -99,9 +99,9 @@ public class Pawn_theThing : Pawn
         {
             IEnumerable<Hediff> hediffs = health.hediffSet.hediffs;
             Func<Hediff, bool> predicate;
-            if ((predicate = thing.isInjury) == null)
+            if ((predicate = Thing.isInjury) == null)
             {
-                predicate = thing.isInjury = thing.getHediffsInjury;
+                predicate = Thing.isInjury = Thing.getHediffsInjury;
             }
 
             result = hediffs.Where(predicate).ToArray();
@@ -110,9 +110,9 @@ public class Pawn_theThing : Pawn
         {
             IEnumerable<Hediff> hediffs2 = health.hediffSet.hediffs;
             Func<Hediff, bool> predicate2;
-            if ((predicate2 = thing.isHeal) == null)
+            if ((predicate2 = Thing.isHeal) == null)
             {
-                predicate2 = thing.isHeal = thing.getHediffsHeal;
+                predicate2 = Thing.isHeal = Thing.getHediffsHeal;
             }
 
             result = hediffs2.Where(predicate2).ToArray();
@@ -121,9 +121,9 @@ public class Pawn_theThing : Pawn
         return result;
     }
 
-    private sealed class thing
+    private sealed class Thing
     {
-        public static readonly thing IncidentThing = new();
+        public static readonly Thing IncidentThing = new();
 
         public static Func<Hediff, bool> isInjury;
 

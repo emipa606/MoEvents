@@ -14,9 +14,9 @@ public class MOIncidentWorker_Nausea : IncidentWorker
         var map = (Map)parms.target;
         IEnumerable<Pawn> freeColonists = map.mapPawns.FreeColonists;
         Func<Pawn, bool> predicate;
-        if ((predicate = nausea.instancePawn) == null)
+        if ((predicate = Nausea.instancePawn) == null)
         {
-            predicate = nausea.instancePawn = nausea.IncidentNausea.TryExecute;
+            predicate = Nausea.instancePawn = Nausea.TryExecute;
         }
 
         if (!freeColonists.Where(predicate).TryRandomElement(out var pawn))
@@ -45,13 +45,13 @@ public class MOIncidentWorker_Nausea : IncidentWorker
         return true;
     }
 
-    private sealed class nausea
+    private sealed class Nausea
     {
-        public static readonly nausea IncidentNausea = new();
+        public static readonly Nausea IncidentNausea = new();
 
         public static Func<Pawn, bool> instancePawn;
 
-        public bool TryExecute(Pawn col)
+        public static bool TryExecute(Pawn col)
         {
             return col.IsColonist;
         }

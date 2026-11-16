@@ -39,7 +39,7 @@ public class MOIncidentWorker_Migration : IncidentWorker
         return result;
     }
 
-    private bool checkDistance(IntVec3 cell1, IntVec3 cell2)
+    private static bool checkDistance(IntVec3 cell1, IntVec3 cell2)
     {
         return (cell1 - cell2).ToVector3().magnitude > 50f;
     }
@@ -61,9 +61,9 @@ public class MOIncidentWorker_Migration : IncidentWorker
             var num2 = Rand.Range(2, 6);
             var source = map.mapPawns.AllPawns;
             Func<Pawn, bool> predicate;
-            if ((predicate = migrate.letMigrate) == null)
+            if ((predicate = Migrate.letMigrate) == null)
             {
-                predicate = migrate.letMigrate = migrate.IncidentMigration.SpawnRandomMigrationAt;
+                predicate = Migrate.letMigrate = Migrate.SpawnRandomMigrationAt;
             }
 
             var source2 = source.Where(predicate).ToList();
@@ -106,13 +106,13 @@ public class MOIncidentWorker_Migration : IncidentWorker
         return result;
     }
 
-    private sealed class migrate
+    private sealed class Migrate
     {
-        public static readonly migrate IncidentMigration = new();
+        public static readonly Migrate IncidentMigration = new();
 
         public static Func<Pawn, bool> letMigrate;
 
-        public bool SpawnRandomMigrationAt(Pawn pwn)
+        public static bool SpawnRandomMigrationAt(Pawn pwn)
         {
             return pwn.IsColonist;
         }

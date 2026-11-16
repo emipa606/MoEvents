@@ -13,8 +13,8 @@ public class MOIncidentWorker_ShipBreak : IncidentWorker
 
     private static ThingDef RandomPodContentsDef()
     {
-        var numLeathers = DefDatabase<ThingDef>.AllDefs.Where(IsLeather).Count();
-        var numMeats = DefDatabase<ThingDef>.AllDefs.Where(IsMeat).Count();
+        var numLeathers = DefDatabase<ThingDef>.AllDefs.Count(IsLeather);
+        var numMeats = DefDatabase<ThingDef>.AllDefs.Count(IsMeat);
         var allDefs = from d in DefDatabase<ThingDef>.AllDefs
             where d.category == ThingCategory.Item && d.tradeability == Tradeability.Buyable &&
                   d.equipmentType == EquipmentType.None && d.BaseMarketValue is >= 20f and < 200f &&

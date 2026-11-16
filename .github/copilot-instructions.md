@@ -1,46 +1,128 @@
-# Mo'Events (Continued) - GitHub Copilot Instructions
+# GitHub Copilot Instructions for Mo'Events (Continued)
 
 ## Mod Overview and Purpose
 
-Mo'Events (Continued) is an enhancement mod for RimWorld, originally created by ilawz and updated by Taranchuk. The purpose of the mod is to enrich the gameplay experience by introducing a variety of new incidents and events, adding complexity and unpredictability to the game. With contributions for translations in Chinese and French, the mod is accessible to a wider audience, enhancing its global appeal.
+Mo'Events (Continued) is an update to the original "ilawz" mod for the game RimWorld. It adds various new events and incidents to enhance the gameplay experience. The mod includes translations for Chinese and French, and allows players to adjust the trigger chances of the events through settings. 
 
 ## Key Features and Systems
 
-- **New Incidents & Events**: A variety of unique incidents such as Abomination, Amnesia, Animal Migration, Calm Weather, and more have been added. These events introduce new challenges and opportunities for players.
-- **Event Trigger Settings**: Players can customize the probability of triggering various events, allowing for a tailored gameplay experience.
-- **Translation Support**: The mod includes support for multiple languages, including Chinese and French, allowing for localization and broader player engagement.
-- **Update of Legacy Code**: Many of the original events have been updated and expanded, ensuring compatibility with the latest versions of RimWorld and enhancing functionality.
+### Events and Incidents
+The mod introduces several new events and incidents, including:
+- Abomination: Rescued pawns turn into abominations.
+- Amnesia: Random pawns forget their previous tasks.
+- Animal Migration: Packs of animals migrate through the area.
+- Calm Weather: Weather becomes calm.
+- Hungry Insects: Manhunting insects search for food.
+- Luxury Cargo Pods: Fallen luxury items from the spaceship.
+- Nausea: Random pawns feel sick.
+- Stroke: Random pawns lose control of their body.
+- Survival Pods: Survival pods with essential items.
+- Tribal Aid: Tribes request medical help for their injured members.
+- Thanksgiving: Friendly tribes offer spare food.
+
+### Settings
+Players can adjust the trigger chances of these events through the mod settings.
+
+### Translation
+The mod includes translations for Chinese and French, thanks to the contributions of gast and qux.
 
 ## Coding Patterns and Conventions
 
-- **Namespaces and Class Organization**: The C# code is organized into logical namespaces and classes. Common types include `JobGiver_Segmentation`, `MOIncidentWorker_Amnesia`, and others, all of which follow good naming conventions.
-- **Method Naming**: Methods within classes are clearly named to describe their functions, such as `TryExecuteWorker` and `FindMeatyPrey`.
-- **XML Integration**: XML files outline game definitions for incidents, jobs, factions, and more. Ensure proper XML structure and adherence to RimWorld's schema for seamless integration.
+### C# Code Structure
+- **Namespaces**: Use `Mlie.MoEvents` as the primary namespace.
+- **Class Names**: Use PascalCase for class names, e.g., `MOIncidentWorker_Amnesia`.
+- **Method Names**: Use camelCase for method names, e.g., `TryExecuteWorker`.
+- **File Organization**: Organize code into relevant files, e.g., `JobGiver_Segmentation.cs` for job-related classes.
 
-## XML Integration
-
-- **Incident Definitions (`IncidentDef`)**: Located in `IncidentDefs.xml`, these define the blueprint for in-game incidents and are pivotal to adding new events.
-- **Job Definitions (`JobDef`)**: In `JobDefs.xml`, job specifics are detailed for unique behaviors upon event occurrences.
-- **Faction and Pawn Kind Definitions**: Stored in `Factions.xml` and `PawnKinds.xml`. These define new factions and pawn types introduced by the mod's events.
+### XML Integration
+- **XML Files**: All XML definitions are located in the `Defs` directory under the mod folder.
+- **Def Types**: Use appropriate Def types like `IncidentDef`, `JobDef`, `FactionDef`, etc.
+- **Attributes and Tags**: Follow the RimWorld XML schema conventions for attributes and tags.
 
 ## Harmony Patching
 
-- **Purpose**: Harmony patches allow for non-destructive changes to RimWorld's base functionality, enabling the mod to inject custom behaviors without altering core files.
-- **Implementation**: Use Harmony's `Patch` attribute to target existing methods and apply `Prefix`, `Postfix`, or `Transpiler` as necessary to augment game mechanics.
+The mod uses Harmony patches to modify vanilla RimWorld behavior. Key Harmony patches include:
+- **Amnesia**: Patches the `TryExecute` method to handle amnesia events.
+- **Abomination**: Patches methods related to corpse and pawn transformations.
+- **Animal Migration**: Patches methods to handle animal migration incidents.
+
+### Patching Conventions
+- **Patch Method Naming**: Use descriptive names for patch methods, e.g., `Patch_Amnesia_TryExecute`.
+- **Prefix/Suffix**: Use `Prefix` or `Suffix` to modify method behavior.
+- **Harmony Instance**: Use a single `Harmony` instance for all patches.
 
 ## Suggestions for Copilot
 
-1. **C# Coding Assistance**: Use Copilot to generate boilerplate code for new incident workers or job drivers by examining existing patterns in your codebase, such as the setup in `MOIncidentWorker_Amnesia`.
-   
-2. **Optimization Proposals**: Let Copilot propose optimizations for existing methods, possibly enhancing performance or maintainability. For instance, streamline logic in `TryExecuteWorker`.
+### XML Generation
+When working with XML, Copilot can assist in generating new `Def` entries. For example, creating a new `IncidentDef` or `JobDef`.
 
-3. **Enhanced Localization Support**: Copilot can assist in generating new string entries for additional languages, or identifying existing strings that need translation.
+### C# Code Generation
+Copilot can help generate new classes and methods for handling custom events and incidents. For example, creating a new `IncidentWorker` for a new event.
 
-4. **XML File Generation**: Copilot can be utilized to draft new XML definitions for events, jobs, and entities, ensuring they adhere to RimWorld's required formats.
+### Harmony Patching
+Copilot can assist in generating Harmony patches by suggesting the appropriate method to patch and the type of patch (`Prefix`, `Suffix`, `Transpiler`).
 
-5. **Improvement Suggestions**: Use Copilot's suggestions to refactor repetitive code or improve naming conventions for better readability and maintenance.
+### Settings UI
+Copilot can help generate the settings UI for adjusting event trigger chances. This involves creating a `ModSettings` class and a settings UI using RimWorld's `ModOption` system.
 
-By following these guidelines and utilizing tools like GitHub Copilot, you can efficiently enhance and extend the functionality of Mo'Events (Continued), bringing a richer experience to RimWorld players. For any specific issues or bugs, consider using the provided Discord channel for support and always provide logs using the Log Uploader tool.
+## Example Usage
+
+### XML Example
+xml
+<IncidentDef>
+    <defName>AnimalMigration</defName>
+    <label>Animal Migration</label>
+    <description>A pack of animals is migrating through your area!</description>
+    <category>Animal</category>
+    <targetCategories>Colony</targetCategories>
+    <randomSelectionWeight>0.1</randomSelectionWeight>
+    <baseMagnitude>0.5</baseMagnitude>
+    <workerClass>MOIncidentWorker_AnimalMigration</workerClass>
+</IncidentDef>
+
+
+### C# Example
+csharp
+using RimWorld;
+using Verse;
+
+namespace Mlie.MoEvents
+{
+    public class MOIncidentWorker_AnimalMigration : IncidentWorker
+    {
+        public override bool TryExecute(IncidentParms parms)
+        {
+            // Code to handle the Animal Migration incident
+            return true;
+        }
+    }
+}
+
+
+### Harmony Patch Example
+csharp
+using HarmonyLib;
+using RimWorld;
+using Verse;
+
+namespace Mlie.MoEvents
+{
+    [HarmonyPatch(typeof(Pawn), "TakeDamage")]
+    public static class Patch_Pawn_TakeDamage
+    {
+        [HarmonyPrefix]
+        public static bool Prefix(Pawn __instance, DamageInfo dinfo, ref bool absorbedOrReflected)
+        {
+            // Custom logic for modifying damage behavior
+            return true;
+        }
+    }
+}
+
+
+## Conclusion
+
+Mo'Events (Continued) aims to enhance RimWorld by introducing new and varied events and incidents. By following the coding patterns and conventions outlined above, developers can contribute to and extend the mod effectively. GitHub Copilot can significantly assist in generating and refining the code for XML definitions, C# classes, and Harmony patches.
 
 ## Project Solution Guidelines
 - Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
@@ -54,4 +136,6 @@ By following these guidelines and utilizing tools like GitHub Copilot, you can e
 ## Hard rules (must follow)
 - Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
 - Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
 

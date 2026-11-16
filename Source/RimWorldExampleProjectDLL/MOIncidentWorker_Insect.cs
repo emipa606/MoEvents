@@ -24,9 +24,9 @@ public class MOIncidentWorker_Insect : IncidentWorker
         {
             var source = map.mapPawns.AllPawns;
             Func<Pawn, bool> predicate;
-            if ((predicate = insect.isInsect) == null)
+            if ((predicate = Insect.isInsect) == null)
             {
-                predicate = insect.isInsect = insect.insects.TryExecute;
+                predicate = Insect.isInsect = Insect.TryExecute;
             }
 
             var source2 = source.Where(predicate).ToList();
@@ -82,13 +82,13 @@ public class MOIncidentWorker_Insect : IncidentWorker
         return result;
     }
 
-    private sealed class insect
+    private sealed class Insect
     {
-        public static readonly insect insects = new();
+        public static readonly Insect insects = new();
 
         public static Func<Pawn, bool> isInsect;
 
-        public bool TryExecute(Pawn p)
+        public static bool TryExecute(Pawn p)
         {
             return p.RaceProps.Humanlike && !p.HostileTo(Faction.OfPlayer) && !p.IsColonist || p.IsPrisonerOfColony;
         }

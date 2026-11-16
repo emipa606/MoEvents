@@ -13,9 +13,9 @@ public class MOIncidentWorker_Stroke : IncidentWorker
         var map = (Map)parms.target;
         IEnumerable<Pawn> freeColonists = map.mapPawns.FreeColonists;
         Func<Pawn, bool> predicate;
-        if ((predicate = stroke.instancePawn) == null)
+        if ((predicate = Stroke.instancePawn) == null)
         {
-            predicate = stroke.instancePawn = stroke.IncidentStroke.TryExecute;
+            predicate = Stroke.instancePawn = Stroke.TryExecute;
         }
 
         bool result;
@@ -47,13 +47,13 @@ public class MOIncidentWorker_Stroke : IncidentWorker
         return result;
     }
 
-    private sealed class stroke
+    private sealed class Stroke
     {
-        public static readonly stroke IncidentStroke = new();
+        public static readonly Stroke IncidentStroke = new();
 
         public static Func<Pawn, bool> instancePawn;
 
-        public bool TryExecute(Pawn col)
+        public static bool TryExecute(Pawn col)
         {
             return col.IsColonist;
         }

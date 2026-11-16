@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <MO_Stroke.label>stroke</MO_Stroke.label>
-  <MO_SurvivalPod.label>survival pod</MO_SurvivalPod.label>
-  <MO_Nausea.label>nausea</MO_Nausea.label>
-  <MO_Insects.label>insect</MO_Insects.label>
   <!-- Not working correctly right now
   <IncidentDef>
     <defName>MO_Recovery</defName>
@@ -13,8 +9,6 @@
     <baseChance>2</baseChance>
     <minRefireDays>30</minRefireDays>
   </IncidentDef> -->
-  <MO_PodCrash.label>pod crash</MO_PodCrash.label>
-  <MO_Thanksgiving.label>thanksgiving</MO_Thanksgiving.label>
   <!-- Bugged
   <IncidentDef>
     <defName>MO_Calm</defName>
@@ -24,7 +18,6 @@
     <baseChance>2</baseChance>
     <minRefireDays>8</minRefireDays>
   </IncidentDef> -->
-  <MO_ShipBreak.label>ship break</MO_ShipBreak.label>
   <!-- Not working like I want to right now
   <IncidentDef>
     <defName>MO_GoodRest</defName>
@@ -34,8 +27,5 @@
     <baseChance>4</baseChance>
     <minRefireDays>5</minRefireDays>
   </IncidentDef> -->
-  <MO_Amnesia.label>amnesia</MO_Amnesia.label>
   <!-- What's this? -->
-  <MO_RescueTraitor.label>rescue traitor</MO_RescueTraitor.label>
-  <MO_Migration.label>migration</MO_Migration.label>
 </LanguageData>

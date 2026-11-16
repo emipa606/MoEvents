@@ -8,7 +8,7 @@ namespace MoreIncidents;
 
 public class MOIncidentWorker_Recovery : IncidentWorker
 {
-    private void HealInjuryRandom(Pawn pawn, float amount)
+    private static void HealInjuryRandom(Pawn pawn, float amount)
     {
         if (!pawn.health.hediffSet.GetInjuredParts().TryRandomElement(out var part))
         {
@@ -34,9 +34,9 @@ public class MOIncidentWorker_Recovery : IncidentWorker
         var map = (Map)parms.target;
         IEnumerable<Pawn> freeColonists = map.mapPawns.FreeColonists;
         Func<Pawn, bool> predicate;
-        if ((predicate = recover.instancePawn) == null)
+        if ((predicate = Recover.instancePawn) == null)
         {
-            predicate = recover.instancePawn = recover.IncidentRecovery.TryExecute;
+            predicate = Recover.instancePawn = Recover.TryExecute;
         }
 
         bool result;
@@ -56,13 +56,13 @@ public class MOIncidentWorker_Recovery : IncidentWorker
         return result;
     }
 
-    private sealed class recover
+    private sealed class Recover
     {
-        public static readonly recover IncidentRecovery = new();
+        public static readonly Recover IncidentRecovery = new();
 
         public static Func<Pawn, bool> instancePawn;
 
-        public bool TryExecute(Pawn col)
+        public static bool TryExecute(Pawn col)
         {
             return col.IsColonist;
         }

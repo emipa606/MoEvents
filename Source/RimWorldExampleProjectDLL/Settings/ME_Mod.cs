@@ -29,7 +29,7 @@ internal class ME_Mod : Mod
         ME_ModSettings.ChangeDef();
     }
 
-    private void ResetSettings()
+    private static void ResetSettings()
     {
         ME_ModSettings.StrokeBaseChance = 1.5f;
         ME_ModSettings.SurvivalPodBaseChance = 1.5f;
@@ -45,12 +45,12 @@ internal class ME_Mod : Mod
         ME_ModSettings.EarliestDayRescueTraitor = 25;
     }
 
-    public override void DoSettingsWindowContents(Rect rect)
+    public override void DoSettingsWindowContents(Rect inRect)
     {
         ME_ModSettings.ChangeDef();
-        var rect2 = new Rect(rect.x, rect.y, rect.width - 30f, rect.height);
+        var rect2 = new Rect(inRect.x, inRect.y, inRect.width - 30f, inRect.height);
         var listing_Standard = new Listing_Standard();
-        Widgets.BeginScrollView(rect, ref scrollPosition, rect2);
+        Widgets.BeginScrollView(inRect, ref scrollPosition, rect2);
         listing_Standard.Begin(rect2);
         listing_Standard.Gap(10f);
         var rect3 = listing_Standard.GetRect(Text.LineHeight);

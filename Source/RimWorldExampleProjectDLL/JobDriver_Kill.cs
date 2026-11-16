@@ -41,7 +41,7 @@ public class JobDriver_Kill : JobDriver
                     return;
                 }
 
-                if (thing is Pawn && targetPawn.Downed && !curJob.killIncappedTarget)
+                if (thing is Pawn && targetPawn is { Downed: true } && !curJob.killIncappedTarget)
                 {
                     EndJobWith(JobCondition.Succeeded);
                 }

@@ -5,7 +5,7 @@ namespace MoreIncidents;
 
 public class JobGiver_Segmentation : ThinkNode_JobGiver
 {
-    public const int SEARCH_DISTANCE = 225;
+    private const int SEARCH_DISTANCE = 225;
 
     protected override Job TryGiveJob(Pawn pawn)
     {

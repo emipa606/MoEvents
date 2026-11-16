@@ -13,9 +13,9 @@ public class MOIncidentWorker_GoodRest : IncidentWorker
         var map = (Map)parms.target;
         IEnumerable<Pawn> freeColonists = map.mapPawns.FreeColonists;
         Func<Pawn, bool> predicate;
-        if ((predicate = rest.instancePawn) == null)
+        if ((predicate = Rest.instancePawn) == null)
         {
-            predicate = rest.instancePawn = rest.IncidentRest.TryExecute;
+            predicate = Rest.instancePawn = Rest.TryExecute;
         }
 
         bool result;
@@ -34,13 +34,13 @@ public class MOIncidentWorker_GoodRest : IncidentWorker
         return result;
     }
 
-    private sealed class rest
+    private sealed class Rest
     {
-        public static readonly rest IncidentRest = new();
+        public static readonly Rest IncidentRest = new();
 
         public static Func<Pawn, bool> instancePawn;
 
-        public bool TryExecute(Pawn col)
+        public static bool TryExecute(Pawn col)
         {
             return col.IsColonist;
         }
